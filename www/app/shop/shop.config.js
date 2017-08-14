@@ -41,6 +41,14 @@ angular.module('shop.module')
                     controller: 'ShopSearchCtrl'
                 }
             }
+        }).state('app.menu.shop.location', {
+            url: '/location',
+            views: {
+                'shopContent': {
+                    templateUrl: 'app/shop/templates/shop-location.html',
+                    controller: 'ShopLocationCtrl'
+                }
+            }
         })
         .state('app.menu.shop.category', {
             url: '/category/:id',
@@ -126,4 +134,35 @@ angular.module('shop.module').directive('filterBox', function () {
                         '</button>' +
                     '</div>'
     };
-})
+});
+
+angular.module('shop.module').directive('locationFilterBox', function () {
+    return {
+        restrict: 'E',
+        replace: true,
+        scope: {
+            model: '=?',
+            search: '=?filtertext',
+            change: '=?change'
+        },
+        link: function (scope, element, attrs) {
+            attrs.minLength = attrs.minLength || 0;
+            scope.placeholder = attrs.placeholder || '';
+            scope.search = { value: '' };
+
+            scope.clearSearch = function () {
+                scope.search.value = "";
+                scope.change();
+            };
+        },
+        template: ' <div id="filter-box" class="item-input-inset">' +
+        '<div class="item-input-wrapper">' +
+        '<i class="icon ion-ios-location-outline"></i>' +
+        '<input type="search" placeholder="{{placeholder}}" style="width: 100%;" ng-model="search.value" ng-change="change()">' +
+        '</div>' +
+
+        '<button class="button button-clear ion-close button-small" style="color: #333" ng-if="search.value.length > 0" ng-click="clearSearch()">' +
+        '</button>' +
+        '</div>'
+    };
+});

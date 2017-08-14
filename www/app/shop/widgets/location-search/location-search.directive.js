@@ -11,12 +11,13 @@
 </pre>
 */
 angular.module('shop.module')
-   .directive('itemSearch', function ($ionicLoading) {
+   .directive('locationSearch', function ($ionicLoading) {
        return {
            scope: {},
            link: function (scope, element, attrs) {
            },
-           controller: ['$scope', '$ionicScrollDelegate', 'ShopService', function ($scope, $ionicScrollDelegate, ShopService) {
+
+           controller: ['$scope', '$ionicScrollDelegate', 'ShopService', '$localStorage', function ($scope, $ionicScrollDelegate, ShopService, $localStorage) {
                $scope.endOfItems = true;
                $scope.loadingItems = false;
                $scope.noSearchword = true;
@@ -29,25 +30,21 @@ angular.module('shop.module')
                    }
 
                    $scope.loadingItems = true;
-                   $scope.items = $scope.items || [];
+                   $scope.locations = $scope.locations || [];
 
                    if ($scope.search && $scope.search.value == "") {
                        $scope.loadingItems = false;
                        $scope.noSearchword = true;
-                       $scope.items = [];
+                       $scope.locations = [];
                        $ionicScrollDelegate.resize();
                        $scope.$broadcast('scroll.infiniteScrollComplete');
                    } else {
                        $scope.noSearchword = false;
-                       ShopService.SearchProducts($scope.search.value, $scope.page).then(function (data) {
+                       ShopService.SearchLocations($scope.search.value, $scope.page).then(function (data) {
                            $scope.text_empty = data.text_empty;
-                           $scope.items = $scope.items.concat(data.products);
+                           $scope.locations = data;
                            $ionicScrollDelegate.resize();
-                           $scope.page++;
-                           if (data.products.length < 1)
-                               $scope.endOfItems = true;
-                           else
-                               $scope.endOfItems = false;
+                           $scope.endOfItems = true;
                            $scope.loadingItems = false;
                            $scope.$broadcast('scroll.infiniteScrollComplete');
                        }, function (data) {
@@ -55,7 +52,7 @@ angular.module('shop.module')
                            $scope.$broadcast('scroll.infiniteScrollComplete');
                        });
                    }
-               }
+               };
 
                $scope.loadNextPage = function () {
                    if (!$scope.endOfItems) {
@@ -63,16 +60,17 @@ angular.module('shop.module')
                    } else {
                        $scope.$broadcast('scroll.infiniteScrollComplete');
                    }
-               }
+               };
 
                $scope.onSearchKeyDown = function () {
                    $scope.endOfItems = false;
                    $scope.loadingItems = false;
-                   $scope.items = [];
+                   $scope.locations = [];
                    $scope.page = 1;
                    $scope.searchLocations();
                }
+
            }],
-           templateUrl: 'app/shop/widgets/item-search/search-template.html'
+           templateUrl: 'app/shop/widgets/location-search/location-template.html'
        };
    });

@@ -1,0 +1,26 @@
+<div>
+    <!--<p class="tab-title item">{{serviceAreaName}}</p>-->
+    <location-filter-box placeholder="{{'shop.search_label' | i18n}}" filtertext="search" ng-model-options="{debounce: 1000}" change="onSearchKeyDown"></location-filter-box>
+
+    <ion-list class="recent-items-list">
+        <ion-item ng-repeat="location in locations">
+            <location-item-template location="location"></location-item-template>
+        </ion-item>
+
+        <div ng-if="!noSearchword && !loadingItems && items.length == 0" class="large-icon-message">
+            <span class="large-app-icon large-app-icon-red">
+                <i class="icon ion-ios-location-outline"></i>
+            </span>
+            <p i18n="shop.errors_search_no_results"></p>
+        </div>
+
+        <div ng-if="noSearchword" class="large-icon-message">
+            <span class="large-app-icon large-app-icon-yellow">
+                <i class="icon ion-ios-location-outline"></i>
+            </span>
+            <p>Start typing for locations</p>
+        </div>
+
+        <ion-infinite-scroll ng-if="!endOfItems" on-infinite="loadNextPage()" distance="1%"></ion-infinite-scroll>
+    </ion-list>
+</div>

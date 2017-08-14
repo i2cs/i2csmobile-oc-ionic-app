@@ -1,28 +1,28 @@
 'use strict';
 
 /**
-* @ngdoc service
-* @name shop.module.ShopService
-* @requires ng.$q
-* @requires dateService
-* @description 
-* Service contains methods to communicate with the API. All methods returns a `promise` object containing 
-* the requested data. On a success response it returns the data from the server, and on an error the promise 
-* rejects with the HTTP server response.
-*/
+ * @ngdoc service
+ * @name shop.module.ShopService
+ * @requires ng.$q
+ * @requires dateService
+ * @description
+ * Service contains methods to communicate with the API. All methods returns a `promise` object containing
+ * the requested data. On a success response it returns the data from the server, and on an error the promise
+ * rejects with the HTTP server response.
+ */
 angular
     .module('shop.module')
-    .service('ShopService', function ($q, dataService) {
+    .service('ShopService', function ($http, $q, $httpParamSerializerJQLike, dataService, $localStorage) {
 
         /**
          * @ngdoc function
          * @name shop.module.ShopService#GetBannerById
          * @methodOf shop.module.ShopService
          * @kind function
-         * 
+         *
          * @description
          * Gets banner images by banner id
-         * 
+         *
          * @example
          <pre>
          ShopService.GetBannerById(1).then(function (data) {
@@ -39,14 +39,18 @@ angular
             }]
          }
          </pre>
-         * 
+         *
          * @param {number} banner_id Banner id
          * @param {number} width Banner width. 1140px is default if left blank
          * @param {number} height Banner height. 380px is default if left blank
          * @returns {promise} Returns a promise of the API call.
          */
         this.GetBannerById = function (banner_id, width, height) {
-            return dataService.apiSecuredPost('/design/banners', { id: banner_id, banenr_width: width, banner_height: height }).then(function (data) {
+            return dataService.apiSecuredPost('/design/banners', {
+                id: banner_id,
+                banenr_width: width,
+                banner_height: height
+            }).then(function (data) {
                 if (data.banners) {
                     return data;
                 } else {
@@ -60,11 +64,11 @@ angular
          * @name shop.module.ShopService#GetBanners
          * @methodOf shop.module.ShopService
          * @kind function
-         * 
+         *
          * @description
          * Gets main banners configured in the system. Additional configuration is needed from
          * OpenCart i2CSMobile module end.
-         * 
+         *
          * @example
          <pre>
          ShopService.GetBanners().then(function (data) {
@@ -91,7 +95,7 @@ angular
             ]
          }
          </pre>
-         * 
+         *
          * @returns {promise} Returns a promise of the API call.
          */
         this.GetBanners = function () {
@@ -109,10 +113,10 @@ angular
          * @name shop.module.ShopService#GetCategories
          * @methodOf shop.module.ShopService
          * @kind function
-         * 
+         *
          * @description
          * Gets categories configured in the system. if none is configured, returns all parent categories
-         * 
+         *
          * @example
          <pre>
          ShopService.GetCategories().then(function (data) {
@@ -138,12 +142,12 @@ angular
             ]
          }
          </pre>
-		 *
-		 * @param {number} id Category id
+         *
+         * @param {number} id Category id
          * @returns {promise} Returns a promise of the API call.
          */
         this.GetCategories = function (id) {
-            return dataService.apiSecuredPost('/category/all', {path :id});
+            return dataService.apiSecuredPost('/category/all', {path: id});
         }
 
         /**
@@ -151,10 +155,10 @@ angular
          * @name shop.module.ShopService#GetCategoryProducts
          * @methodOf shop.module.ShopService
          * @kind function
-         * 
+         *
          * @description
          * Gets product list of a category
-         * 
+         *
          * @example
          <pre>
          ShopService.GetCategoryProducts(1, 1).then(function (data) {
@@ -203,8 +207,8 @@ angular
           "limit": 10
          }
          </pre>
-         * 
-         * 
+         *
+         *
          * @param {number} id Category id
          * @param {number} page Page number
          * @returns {promise} Returns a promise of the API call.
@@ -213,7 +217,7 @@ angular
 
             var limit = 10;
 
-            return dataService.apiSecuredPost('/category', { path: id, page: page, limit: limit }).then(function (data) {
+            return dataService.apiSecuredPost('/category', {path: id, page: page, limit: limit}).then(function (data) {
                 for (var i in data.products) {
                     if (data.products[i].special_clear) {
                         var s = parseInt(data.products[i].special_clear);
@@ -231,10 +235,10 @@ angular
          * @name shop.module.ShopService#GetProduct
          * @methodOf shop.module.ShopService
          * @kind function
-         * 
+         *
          * @description
          * Gets details of a product
-         * 
+         *
          * @example
          <pre>
          ShopService.GetProduct($stateParams.id).then(function (data) {
@@ -336,13 +340,13 @@ angular
           "recurrings": []
          }
          </pre>
-         * 
+         *
          * @param {number} id Product id
          * @returns {promise} Returns a promise of the API call.
          */
         this.GetProduct = function (id) {
 
-            return dataService.apiSecuredPost('/product', { product_id: id }).then(function (data) {
+            return dataService.apiSecuredPost('/product', {product_id: id}).then(function (data) {
                 if (data.special_clear) {
                     var s = parseInt(data.special_clear);
                     var p = parseInt(data.price_clear);
@@ -359,80 +363,94 @@ angular
 
                 data.review_status = data.review_status == "1";
                 data.images.unshift({
-				  "popup": data.popup,
-				  "thumb": data.popup,
-				  "preview": data.popup
-				});
+                    "popup": data.popup,
+                    "thumb": data.popup,
+                    "preview": data.popup
+                });
 
                 return data;
             });
         }
+        
+        this.GetPostCode = function () {
+
+            return dataService.apiSecuredPost('/pbdp/autocomplete&mj=1&name=');
+        };
+
+        this.SavePostcode = function (postcode) {
+            return dataService.apiSecuredPost('/pbdp/saveminorcityfromzipcode', {id : postcode})
+        };
 
         /**
-        * @ngdoc function
-        * @name shop.module.ShopService#GetProductReviews
-        * @methodOf shop.module.ShopService
-        * @kind function
-        * 
-        * @description
-        * Get product reviews of a product
-        * 
-        * @example
-        <pre>
-        ShopService.GetProductReviews($scope.item.product_id, $scope.page).then(function (data) {
+         * @ngdoc function
+         * @name shop.module.ShopService#GetProductReviews
+         * @methodOf shop.module.ShopService
+         * @kind function
+         *
+         * @description
+         * Get product reviews of a product
+         *
+         * @example
+         <pre>
+         ShopService.GetProductReviews($scope.item.product_id, $scope.page).then(function (data) {
            $scope.reviews = data.reviews;
         });
-        </pre>
-        Resolved Object
-        <pre>
-        {
-          "reviews": [
-            {
-              "author": "Adam",
-              "text": "this is a very nice product. i like this",
-              "rating": 4,
-              "date_added": "30/07/2016"
-            }
-          ],
-          "text_no_reviews": "There are no reviews for this product.",
-          "pagination": "",
-          "results": "Showing 1 to 1 of 1 (1 Pages)"
-        }
-        </pre>
-        * 
-        * @param {number} id Product id
-        * @param {number} page Page number
-        * @returns {promise} Returns a promise of the API call.
-        */
+         </pre>
+         Resolved Object
+         <pre>
+         {
+           "reviews": [
+             {
+               "author": "Adam",
+               "text": "this is a very nice product. i like this",
+               "rating": 4,
+               "date_added": "30/07/2016"
+             }
+           ],
+           "text_no_reviews": "There are no reviews for this product.",
+           "pagination": "",
+           "results": "Showing 1 to 1 of 1 (1 Pages)"
+         }
+         </pre>
+         *
+         * @param {number} id Product id
+         * @param {number} page Page number
+         * @returns {promise} Returns a promise of the API call.
+         */
         this.GetProductReviews = function (id, page) {
-            return dataService.apiSecuredPost('/product/getreviews', { product_id: id, page: page || 1 });
+            return dataService.apiSecuredPost('/product/getreviews', {product_id: id, page: page || 1});
         }
 
         /**
-        * @ngdoc function
-        * @name shop.module.ShopService#AddProductReview
-        * @methodOf shop.module.ShopService
-        * @kind function
-        * 
-        * @description
-        * Get product reviews of a product
-        * 
-        * @example
-        <pre>
-        ShopService.AddProductReview(id, name, rating, text).then(function (data) {
+         * @ngdoc function
+         * @name shop.module.ShopService#AddProductReview
+         * @methodOf shop.module.ShopService
+         * @kind function
+         *
+         * @description
+         * Get product reviews of a product
+         *
+         * @example
+         <pre>
+         ShopService.AddProductReview(id, name, rating, text).then(function (data) {
            $scope.success_message = data.success;
         });
-        </pre>
-        * 
-        * @param {number} product_id Product id
-        * @param {string} name Reviewer name
-        * @param {number} rating Rating
-        * @param {string} text User review text
-        * 
-        * @returns {promise} Returns a promise of the API call.
-        */
+         </pre>
+         *
+         * @param {number} product_id Product id
+         * @param {string} name Reviewer name
+         * @param {number} rating Rating
+         * @param {string} text User review text
+         *
+         * @returns {promise} Returns a promise of the API call.
+         */
         this.AddProductReview = function (id, name, rating, text) {
-            return dataService.apiSecuredPost('/product/addreview', { product_id: id, name: name, rating: rating, text: text });
+            return dataService.apiSecuredPost('/product/addreview', {
+                product_id: id,
+                name: name,
+                rating: rating,
+                text: text
+            });
         }
 
         /**
@@ -440,15 +458,19 @@ angular
          * @name shop.module.ShopService#GetRingSizeImage
          * @methodOf shop.module.ShopService
          * @kind function
-         * 
+         *
          * @description
          * Gets ring size guid image. This is a sample service call to retrieve a banner by `id`
-         * 
+         *
          * @returns {promise} Returns a promise of the API call.
          */
         this.GetRingSizeImage = function () {
 
-            return dataService.apiSecuredPost('/design/banner', { banner_id: 19, banner_width: 500, banner_height: 500 }).then(function (data) {
+            return dataService.apiSecuredPost('/design/banner', {
+                banner_id: 19,
+                banner_width: 500,
+                banner_height: 500
+            }).then(function (data) {
                 if (data.banners) {
                     return data;
                 } else {
@@ -462,10 +484,10 @@ angular
          * @name shop.module.ShopService#GetFeaturedProducts
          * @methodOf shop.module.ShopService
          * @kind function
-         * 
+         *
          * @description
          * Gets featured products list. Needs configuration settings in the OpenCart module.
-         * 
+         *
          * @example
          <pre>
          ShopService.GetFeaturedProducts().then(function (data) {
@@ -474,34 +496,34 @@ angular
          </pre>
          Resolved Object
          <pre>
-            {
-              "heading_title": "Featured",
-              "products": [
-                {
-                  "product_id": "42",
-                  "thumb": "full_image_path50x50.jpg",
-                  "name": "Apple Cinema 30",
-                  "description": "description",
-                  "price": "$122.00",
-                  "price_clear": "100.0000",
-                  "special": "$110.00",
-                  "special_clear": "90.0000",
-                  "mobile_special": false,
-                  "mobile_special_clear": null,
-                  "off": "10",
-                  "tax": "$90.00",
-                  "rating": 0,
-                  "images": [
-                    "full_image_path100x100.jpg",
-                    "full_image_path100x100.jpg",
-                    "full_image_path100x100.jpg"
-                  ],
-                  "reward": 0
-                }
-              ]
-            }
+         {
+           "heading_title": "Featured",
+           "products": [
+             {
+               "product_id": "42",
+               "thumb": "full_image_path50x50.jpg",
+               "name": "Apple Cinema 30",
+               "description": "description",
+               "price": "$122.00",
+               "price_clear": "100.0000",
+               "special": "$110.00",
+               "special_clear": "90.0000",
+               "mobile_special": false,
+               "mobile_special_clear": null,
+               "off": "10",
+               "tax": "$90.00",
+               "rating": 0,
+               "images": [
+                 "full_image_path100x100.jpg",
+                 "full_image_path100x100.jpg",
+                 "full_image_path100x100.jpg"
+               ],
+               "reward": 0
+             }
+           ]
+         }
          </pre>
-         * 
+         *
          * @returns {promise} Returns a promise of the API call.
          */
         this.GetFeaturedProducts = function () {
@@ -524,10 +546,10 @@ angular
          * @name shop.module.ShopService#GetLatestProducts
          * @methodOf shop.module.ShopService
          * @kind function
-         * 
+         *
          * @description
          * Gets latest products list
-         * 
+         *
          * @example
          <pre>
          ShopService.GetLatestProducts($scope.data.latestPage).then(function (data) {
@@ -536,32 +558,32 @@ angular
          </pre>
          Resolved Object
          <pre>
-            {
-              "heading_title": "Latest",
-              "products": [
-                {
-                  "product_id": "47",
-                  "thumb": "full_image_path50x50.jpg",
-                  "name": "HP LP3065",
-                  "description": "description",
-                  "price": "$122.00",
-                  "price_clear": "100.0000",
-                  "special": false,
-                  "special_clear": null,
-                  "mobile_special": "$26.00",
-                  "mobile_special_clear": "20.0000",
-                  "off": "10",
-                  "tax": "$100.00",
-                  "rating": 0,
-                  "images": [
-                    "full_image_path100x100.jpg"
-                  ],
-                  "reward": 0
-                }
-              ]
-            }
+         {
+           "heading_title": "Latest",
+           "products": [
+             {
+               "product_id": "47",
+               "thumb": "full_image_path50x50.jpg",
+               "name": "HP LP3065",
+               "description": "description",
+               "price": "$122.00",
+               "price_clear": "100.0000",
+               "special": false,
+               "special_clear": null,
+               "mobile_special": "$26.00",
+               "mobile_special_clear": "20.0000",
+               "off": "10",
+               "tax": "$100.00",
+               "rating": 0,
+               "images": [
+                 "full_image_path100x100.jpg"
+               ],
+               "reward": 0
+             }
+           ]
+         }
          </pre>
-         * 
+         *
          * @param {number} page Page number
          * @returns {promise} Returns a promise of the API call.
          */
@@ -570,7 +592,7 @@ angular
             var start = (page - 1) * 10;
             var limit = 10;
 
-            return dataService.apiSecuredPost('/latest', { start: start, limit: limit }).then(function (data) {
+            return dataService.apiSecuredPost('/latest', {start: start, limit: limit}).then(function (data) {
                 for (var i in data.products) {
                     if (data.products[i].special_clear) {
                         var s = parseInt(data.products[i].special_clear);
@@ -588,10 +610,10 @@ angular
          * @name shop.module.ShopService#SearchProducts
          * @methodOf shop.module.ShopService
          * @kind function
-         * 
+         *
          * @description
          * Search for products by a given search term
-         * 
+         *
          * @example
          <pre>
          ShopService.SearchProducts(vm.search.value, $scope.page).then(function (data) {
@@ -600,42 +622,42 @@ angular
          </pre>
          Resolved Object
          <pre>
-            {
-              "text_empty": "There is no product that matches the search criteria.",
-              "products": [
-                {
-                  "product_id": "42",
-                  "thumb": "full_image_path228x228.jpg",
-                  "name": "Apple Cinema 30",
-                  "description": "The 30-inch Apple Cinema HD Display del..",
-                  "price": "$122.00",
-                  "price_clear": "100.0000",
-                  "special": "$110.00",
-                  "special_clear": "90.0000",
-                  "off": "10",
-                  "mobile_special": false,
-                  "mobile_special_clear": null,
-                  "tax": "$90.00",
-                  "minimum": "2",
-                  "rating": 0,
-                  "images": [
-                    "full_image_path100x100.jpg",
-                    "full_image_path100x100.jpg",
-                    "full_image_path100x100.jpg"
-                  ],
-                  "reward": 0
-                }
-              ],
-              "search": "apple",
-              "description": "apple",
-              "category_id": "0",
-              "sub_category": "0",
-              "sort": "p.sort_order",
-              "order": "ASC",
-              "limit": 10
-            }
+         {
+           "text_empty": "There is no product that matches the search criteria.",
+           "products": [
+             {
+               "product_id": "42",
+               "thumb": "full_image_path228x228.jpg",
+               "name": "Apple Cinema 30",
+               "description": "The 30-inch Apple Cinema HD Display del..",
+               "price": "$122.00",
+               "price_clear": "100.0000",
+               "special": "$110.00",
+               "special_clear": "90.0000",
+               "off": "10",
+               "mobile_special": false,
+               "mobile_special_clear": null,
+               "tax": "$90.00",
+               "minimum": "2",
+               "rating": 0,
+               "images": [
+                 "full_image_path100x100.jpg",
+                 "full_image_path100x100.jpg",
+                 "full_image_path100x100.jpg"
+               ],
+               "reward": 0
+             }
+           ],
+           "search": "apple",
+           "description": "apple",
+           "category_id": "0",
+           "sub_category": "0",
+           "sort": "p.sort_order",
+           "order": "ASC",
+           "limit": 10
+         }
          </pre>
-         * 
+         *
          * @param {string} search Search term
          * @param {number} page Page number
          * @returns {promise} Returns a promise of the API call.
@@ -644,7 +666,11 @@ angular
 
             var limit = 10;
 
-            return dataService.apiSecuredPost('/product/search', { search: search, page: page, limit: limit }).then(function (data) {
+            return dataService.apiSecuredPost('/product/search', {
+                search: search,
+                page: page,
+                limit: limit
+            }).then(function (data) {
                 for (var i in data.products) {
                     if (data.products[i].special) {
                         var s = parseInt(data.products[i].special_clear);
@@ -655,29 +681,56 @@ angular
 
                 return data;
             });
-        }
+        };
+
+        this.SearchLocations = function (search, page) {
+
+            var config = {};
+            config.headers = [];
+            config.headers['Content-Type'] = 'application/x-www-form-urlencoded; charset=utf-8';
+
+            return dataService.apiSecuredPost('/autocomplete/loadservicearea', {
+                country_id: 99,
+                term: search
+            });
+        };
+
+        this.SubmitLocation = function (location) {
+
+            var config = {};
+            config.headers = [];
+            config.headers['Content-Type'] = 'application/x-www-form-urlencoded; charset=utf-8';
+
+            return dataService.apiSecuredPost('/autocomplete/loadstateservice',
+                {
+                    service_area_id: location.areaid,
+                    service_area_name: location.zonename + ' (' + location.zonecode + ')',
+                    service_area_zone_id: location.zoneid
+                });
+        };
+
 
         /**
          * @ngdoc function
          * @name shop.module.ShopService#AddToWishlist
          * @methodOf shop.module.ShopService
          * @kind function
-         * 
+         *
          * @description
          * Adds a product to the wishlist
-         * 
+         *
          * @example
          <pre>
          ShopService.AddToWishlist(46).then(function (data) {
                 //success
          });
          </pre>
-         * 
+         *
          * @param {number} id Product id
          * @returns {promise} Returns a promise of the API call.
          */
         this.AddToWishlist = function (id) {
-            return dataService.apiSecuredPost('/wishlist/add', { product_id: id }).then(function (data) {
+            return dataService.apiSecuredPost('/wishlist/add', {product_id: id}).then(function (data) {
                 if (data.success) {
                     return data;
                 } else {

@@ -111,7 +111,13 @@
                                         </div>
                                     </ion-scroll>
                                 </label>
-
+                                <label class="item item-input item item-select">
+                                    <div class="input-label" ng-class="{'assertive':shop.shopItemForm.quantity.$invalid}" i18n="shop.item_postcode"></div>
+                                    <!--<select data-ng-options="code as areaCode for areaCode in areaCodes" ng-model="selectedOption" ng-change="savePostcode(selectedOption)"></select>-->
+                                    <select ng-model="cart.selectedArea" ng-change="savePostcode(cart.selectedArea)">
+                                        <option ng-repeat="areaCode in areaCodes" value="{{areaCode}}">{{areaCode}}</option>
+                                    </select>
+                                </label>
                                 <label class="item item-input">
                                     <div class="input-label" ng-class="{'assertive':shop.shopItemForm.quantity.$invalid}" i18n="shop.item_quantity"></div>
 									<number-spinner name="quantity" required ng-model="cart.quantity" minimum="{{::item.minimum}}"></number-spinner>

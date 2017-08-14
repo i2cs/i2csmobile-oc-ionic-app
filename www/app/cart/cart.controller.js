@@ -146,6 +146,8 @@ angular
         $scope.checkout.personaInfo = 3;
         $scope.items = [];
         $scope.card = {};
+        $scope.checkout.postcode = $localStorage.postcode;
+        $scope.checkout.city = $localStorage.city;
 
         $scope.loadCart = function (silent) {
             if (!silent)

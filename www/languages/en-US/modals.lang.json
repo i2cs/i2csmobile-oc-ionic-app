@@ -7,6 +7,7 @@
   "contact_modal_desc": "As always, we'd love to help you! Pick a way to contact",
   "about_modal_title": "About",
   "about_modal_main": "i2cs Mobile App for OpenCart Backend",
+  "location_modal": "Your shopping location is",
   "about_modal_desc": "Email us on for more info",
   "no_internet_modal_title": "Internet Disconnected",
   "no_internet_modal_main": "No internet",
@@ -69,6 +70,8 @@
 
   "button_log_in": "Login",
   "button_log_out": "Logout",
+  "button_start_shopping": "Start Shopping",
+  "button_research_location": "Choose Location",
   "button_register": "Register",
   "button_no": "No",
   "button_ok": "OK",

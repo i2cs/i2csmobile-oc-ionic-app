@@ -1,18 +1,18 @@
 'use strict';
 
 /**
-* @ngdoc controller
-* @name shop.module.controller:ShopHomeCtrl
-* @requires $scope
-* @requires $localStorage
-* @requires $rootScope
-* @requires $stateParams
-* @requires $ionicSlideBoxDelegate
-* @requires ShopService
-* @description
-* Home page of the Shop module. This controller contains methods to show banners and product catalog in
-* the home page.
-*/
+ * @ngdoc controller
+ * @name shop.module.controller:ShopHomeCtrl
+ * @requires $scope
+ * @requires $localStorage
+ * @requires $rootScope
+ * @requires $stateParams
+ * @requires $ionicSlideBoxDelegate
+ * @requires ShopService
+ * @description
+ * Home page of the Shop module. This controller contains methods to show banners and product catalog in
+ * the home page.
+ */
 angular
     .module('shop.module')
     .controller('ShopHomeCtrl', function ($scope, $localStorage, $rootScope, $stateParams, $ionicSlideBoxDelegate, ShopService) {
@@ -27,7 +27,14 @@ angular
         $scope.latestPage = 1;
 
         if (!$scope.data.slides)
-            $scope.data.slides = [{ image: "app/shop/images/slide.png" }];
+            $scope.data.slides = [{image: "app/shop/images/slide.png"}]
+
+        console.log('#############');
+        console.log($rootScope.refresh);
+        console.log('#############');
+        if($rootScope.refresh){
+            refreshUI();
+        }
 
         $scope.refreshUI = function () {
             $scope.latestPage = 1;
@@ -115,26 +122,26 @@ angular
 
 
 /**
-* @ngdoc controller
-* @name shop.module.controller:ShopItemCtrl
-* @requires $scope
-* @requires $timeout
-* @requires $localStorage
-* @requires $rootScope
-* @requires $state
-* @requires $stateParams
-* @requires $ionicPopup
-* @requires $ionicLoading
-* @requires $ionicTabsDelegate
-* @requires $ionicSlideBoxDelegate
-* @requires locale
-* @requires ShopService
-* @requires CartService
-* @requires WEBSITE
-* @description
-* Shows details of a selected item. Renders all attributes and options in the view.
-* Contains a `Buy` button which interacts with the API and add to product cart.
-*/
+ * @ngdoc controller
+ * @name shop.module.controller:ShopItemCtrl
+ * @requires $scope
+ * @requires $timeout
+ * @requires $localStorage
+ * @requires $rootScope
+ * @requires $state
+ * @requires $stateParams
+ * @requires $ionicPopup
+ * @requires $ionicLoading
+ * @requires $ionicTabsDelegate
+ * @requires $ionicSlideBoxDelegate
+ * @requires locale
+ * @requires ShopService
+ * @requires CartService
+ * @requires WEBSITE
+ * @description
+ * Shows details of a selected item. Renders all attributes and options in the view.
+ * Contains a `Buy` button which interacts with the API and add to product cart.
+ */
 angular
     .module('shop.module')
     .controller('ShopItemCtrl', function ($scope, $timeout, $localStorage, $rootScope, $state, $stateParams, $ionicPopup, $ionicLoading, $ionicTabsDelegate, $ionicSlideBoxDelegate, locale, ShopService, CartService, WEBSITE, REWARDS_ENABLED) {
@@ -171,6 +178,15 @@ angular
                 $ionicLoading.hide();
             }
         }
+
+        ShopService.GetPostCode().then(function (data) {
+            $scope.areaCodes = [];
+
+            for (var i = 0; i < data.length ; i++) {
+                var area = data[i];
+                $scope.areaCodes[i] = area.zip_code + ' - ' + area.area_name;
+            }
+        });
 
         ShopService.GetProduct($stateParams.id).then(function (data) {
             $scope.item = {};
@@ -261,10 +277,10 @@ angular
                     templateUrl: "app/shop/templates/popups/missing-props.html",
                     scope: $scope,
                     buttons: [
-                      {
-                          text: 'OK',
-                          type: 'button-positive'
-                      }
+                        {
+                            text: 'OK',
+                            type: 'button-positive'
+                        }
                     ]
                 });
             } else {
@@ -274,7 +290,7 @@ angular
                     $rootScope.cartItemCount = $rootScope.cartItemCount || 0;
                     $rootScope.cartItemCount += parseInt($scope.cart.quantity);
                     $ionicTabsDelegate.select(2);
-                    $state.go('app.menu.cart.home', {}, { reload: true });
+                    $state.go('app.menu.cart.home', {}, {reload: true});
                     $ionicLoading.hide();
                 }, function (error) {
                     alert("Error. Can't add to the cart");
@@ -290,10 +306,10 @@ angular
                     templateUrl: "app/shop/templates/popups/missing-props.html",
                     scope: $scope,
                     buttons: [
-                      {
-                          text: 'OK',
-                          type: 'button-positive'
-                      }
+                        {
+                            text: 'OK',
+                            type: 'button-positive'
+                        }
                     ]
                 });
             } else {
@@ -304,15 +320,15 @@ angular
                     cssClass: 'desc-popup',
                     template: locale.getString('shop.added_to_cart_desc'),
                     buttons: [
-                      { text: locale.getString('shop.button_shop_more') },
-                      {
-                          text: locale.getString('shop.button_go_to_cart'),
-                          type: 'button-positive',
-                          onTap: function (e) {
-                              $ionicTabsDelegate.select(2);
-                              $state.go('app.menu.cart.home', {}, { reload: true });
-                          }
-                      }
+                        {text: locale.getString('shop.button_shop_more')},
+                        {
+                            text: locale.getString('shop.button_go_to_cart'),
+                            type: 'button-positive',
+                            onTap: function (e) {
+                                $ionicTabsDelegate.select(2);
+                                $state.go('app.menu.cart.home', {}, {reload: true});
+                            }
+                        }
                     ]
                 });
 
@@ -372,6 +388,20 @@ angular
             return item.type === 'image';
         }
 
+        $scope.savePostcode = function (code) {
+            var postcode = code.split('-')[0].trim();
+            var city = code.split('-')[1].trim();
+            $localStorage.postcode = postcode;
+            $localStorage.city = city;
+                ShopService.SavePostcode(postcode).then(function () {
+                $state.transitionTo($state.current, $stateParams, {
+                    reload: true,
+                    inherit: false,
+                    notify: true
+                });
+            })
+        }
+
         vm.price_changed = false;
         $scope.$watch('cart.options', function (v) {
             vm.price_changed = false;
@@ -423,16 +453,16 @@ angular
 
 
 /**
-* @ngdoc controller
-* @name shop.module.controller:ShopCategoryCtrl
-* @requires $scope
-* @requires $rootScope
-* @requires $stateParams
-* @requires $state
-* @requires ShopService
-* @description
-* Lists products of a selected category.
-*/
+ * @ngdoc controller
+ * @name shop.module.controller:ShopCategoryCtrl
+ * @requires $scope
+ * @requires $rootScope
+ * @requires $stateParams
+ * @requires $state
+ * @requires ShopService
+ * @description
+ * Lists products of a selected category.
+ */
 angular
     .module('shop.module')
     .controller('ShopCategoryCtrl', function ($scope, $rootScope, $stateParams, $state, ShopService) {
@@ -492,19 +522,42 @@ angular
 
 
 /**
-* @ngdoc controller
-* @name shop.module.controller:ShopSearchCtrl
-* @requires $scope
-* @requires $rootScope
-* @requires $ionicScrollDelegate
-* @requires $stateParams
-* @requires ShopService
-* @description
-* Search page shows a search input box and filters the product catalog for the customer entered
-* keywords.
-*/
+ * @ngdoc controller
+ * @name shop.module.controller:ShopSearchCtrl
+ * @requires $scope
+ * @requires $rootScope
+ * @requires $ionicScrollDelegate
+ * @requires $stateParams
+ * @requires ShopService
+ * @description
+ * Search page shows a search input box and filters the product catalog for the customer entered
+ * keywords.
+ */
 angular
     .module('shop.module')
     .controller('ShopSearchCtrl', function ($scope, $rootScope, $ionicScrollDelegate, $stateParams, ShopService) {
 
+    });
+
+/**
+ * @ngdoc controller
+ * @name shop.module.controller:ShopSearchCtrl
+ * @requires $scope
+ * @requires $rootScope
+ * @requires $ionicScrollDelegate
+ * @requires $stateParams
+ * @requires ShopService
+ * @description
+ * Search page shows a search input box and filters the product catalog for the customer entered
+ * keywords.
+ */
+angular
+    .module('shop.module')
+    .controller('ShopLocationCtrl', function ($scope, $rootScope, $ionicScrollDelegate, $stateParams, ShopService, $localStorage) {
+
+        $scope.$on('$ionicView.enter', function () {
+            // console.log($localStorage.location);
+            // $scope.serviceAreaName = $localStorage.location.service_area_name;
+            // console.log($scope.serviceAreaName);
+        });
     });
