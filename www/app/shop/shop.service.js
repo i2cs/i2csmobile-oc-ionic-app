@@ -371,7 +371,7 @@ angular
                 return data;
             });
         }
-        
+
         this.GetPostCode = function () {
 
             return dataService.apiSecuredPost('/pbdp/autocomplete&mj=1&name=');
@@ -380,6 +380,10 @@ angular
         this.SavePostcode = function (postcode) {
             return dataService.apiSecuredPost('/pbdp/saveminorcityfromzipcode', {id : postcode})
         };
+
+        this.CheckAvailability = function (productId) {
+            return dataService.apiSecuredPost('/pbdp/productavailable&product_id=' + productId, {})
+        }
 
         /**
          * @ngdoc function

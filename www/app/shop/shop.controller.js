@@ -32,7 +32,7 @@ angular
         console.log('#############');
         console.log($rootScope.refresh);
         console.log('#############');
-        if($rootScope.refresh){
+        if ($rootScope.refresh) {
             refreshUI();
         }
 
@@ -151,6 +151,7 @@ angular
         $scope.cart.quantity = 1;
         $scope.id = $stateParams.id;
         $scope.reward = REWARDS_ENABLED;
+        $scope.productAvailable = false;
 
         $scope.$on('$ionicView.enter', function () {
             $timeout(function () {
@@ -182,7 +183,7 @@ angular
         ShopService.GetPostCode().then(function (data) {
             $scope.areaCodes = [];
 
-            for (var i = 0; i < data.length ; i++) {
+            for (var i = 0; i < data.length; i++) {
                 var area = data[i];
                 $scope.areaCodes[i] = area.zip_code + ' - ' + area.area_name;
             }
@@ -389,18 +390,30 @@ angular
         }
 
         $scope.savePostcode = function (code) {
+            var productId = $stateParams.id;
             var postcode = code.split('-')[0].trim();
             var city = code.split('-')[1].trim();
             $localStorage.postcode = postcode;
             $localStorage.city = city;
-                ShopService.SavePostcode(postcode).then(function () {
-                $state.transitionTo($state.current, $stateParams, {
-                    reload: true,
-                    inherit: false,
-                    notify: true
-                });
+            ShopService.SavePostcode(postcode).then(function () {
+                ShopService.CheckAvailability(productId).then(function (data) {
+                    console.log('############### ', data)
+                    if (data.messagedetails.available === 1) {
+                        $scope.productAvailable = true;
+                    }
+                }).then(function () {
+                    $state.transitionTo($state.current, $stateParams, {
+                        reload: true,
+                        inherit: false,
+                        notify: true
+                    });
+                })
             })
         }
+
+        $scope.isDisabled = function () {
+            return !$scope.productAvailable;
+        };
 
         vm.price_changed = false;
         $scope.$watch('cart.options', function (v) {

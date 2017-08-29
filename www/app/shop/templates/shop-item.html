@@ -185,11 +185,11 @@
 
     <ion-footer-bar align-title="center" ng-class="{'bar-assertive':shop.shopItemForm.$invalid, 'bar-positive':shop.shopItemForm.$valid}">
         <div class="buttons">
-            <button class="button" ng-click="addToCart()" i18n="shop.item_button_add_to_cart"></button>
+            <button ng-disabled="isDisabled()" class="button" ng-click="addToCart()" i18n="shop.item_button_add_to_cart"></button>
         </div>
         <h2 class="title">{{item.special ? item.special : item.price}}</h2>
         <div class="buttons">
-            <button class="button" ng-click="buyNow()" i18n="shop.item_button_buy_now"></button>
+            <button ng-disabled ="isDisabled()" class="button" ng-click="buyNow()" i18n="shop.item_button_buy_now"></button>
         </div>
     </ion-footer-bar>
 </ion-view>
