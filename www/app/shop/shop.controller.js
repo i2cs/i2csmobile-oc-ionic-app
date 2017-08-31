@@ -152,6 +152,8 @@ angular
         $scope.id = $stateParams.id;
         $scope.reward = REWARDS_ENABLED;
         $scope.productAvailable = false;
+        $scope.shippingPrice = "";
+        $scope.deliveryMessage = "";
 
         $scope.$on('$ionicView.enter', function () {
             $timeout(function () {
@@ -397,22 +399,27 @@ angular
             $localStorage.city = city;
             ShopService.SavePostcode(postcode).then(function () {
                 ShopService.CheckAvailability(productId).then(function (data) {
-                    console.log('############### ', data)
-                    if (data.messagedetails.available === 1) {
+                    console.log(data);
+                    if (data.available === 1) {
                         $scope.productAvailable = true;
+                        $scope.shippingPrice = data.shippingprice;
+                        $scope.deliveryMessage = data.delivery;
+                        $state.transitionTo($state.current, $stateParams, {
+                            reload: true,
+                            inherit: false,
+                            notify: true
+                        });
                     }
-                }).then(function () {
-                    $state.transitionTo($state.current, $stateParams, {
-                        reload: true,
-                        inherit: false,
-                        notify: true
-                    });
                 })
             })
         }
 
         $scope.isDisabled = function () {
             return !$scope.productAvailable;
+        };
+
+        $scope.isEnabled = function () {
+            return $scope.productAvailable;
         };
 
         vm.price_changed = false;
