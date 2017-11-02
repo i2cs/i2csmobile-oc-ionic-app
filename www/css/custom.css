@@ -1,1 +1,28 @@
 /* custom css goes here */
+.bar.bar-positive {
+    border-color: #00A653;
+    background-color: #00A653;
+    background-image: linear-gradient(0deg,#00A653,#00A653 50%,transparent 50%);
+    color: #fff;
+}
+
+.bar-positive .button {
+    border-color: transparent;
+    background-color: #00A653;
+    color: #fff;
+}
+
+.tabs-positive>.tabs, .tabs.tabs-positive {
+    border-color: #00A653;
+    background-color: #00A653;
+    background-image: linear-gradient(0deg,#00A653,#00A653 50%,transparent 50%);
+    /* color: #fff; */
+}
+
+.button {
+    background-color: #91e0b9
+}
+
+.button.button-balanced{
+    background-color: #b0003a
+}
