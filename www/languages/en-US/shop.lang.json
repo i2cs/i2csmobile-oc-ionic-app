@@ -33,9 +33,9 @@
   "item_rating_author": "By {author} on {added}",
   "item_rating_post_review": "Post Review",
 
-  "error_required_fields": "Please enter values for following fileds",
-  "error_not_connected_cache_failed": "Please connect to internet to load this item",
-  "error_not_connected_cache_success": "Item loaded from cache. Connect to internet to load live detials",
+  "error_required_fields": "Please enter values for following fields",
+  "error_not_connected_cache_failed": "Please connect to Internet to load this item",
+  "error_not_connected_cache_success": "Item loaded from cache. Connect to Internet to load live details",
 
   "wishlist_updated": "Wishlist updated",
   "wishlist_item_added_to_list": "Item added to your wishlist",
