@@ -8,58 +8,61 @@
     },
     "installed_plugins": {
         "cordova-plugin-app-event": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mstgolf"
         },
         "cordova-plugin-app-version": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mstgolf"
         },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mstgolf"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mstgolf"
         },
         "cordova-plugin-device-orientation": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
-        },
-        "cordova-plugin-google-analytics": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
-        },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
-        },
-        "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
-        },
-        "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
-        },
-        "ionic-plugin-deploy": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
-        },
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
-        },
-        "onesignal-cordova-plugin": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mstgolf"
         },
         "cordova-plugin-geolocation": {
             "GEOLOCATION_USAGE_DESCRIPTION": " ",
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mstgolf"
+        },
+        "cordova-plugin-google-analytics": {
+            "PACKAGE_NAME": "com.i2cs.mstgolf"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.i2cs.mstgolf"
+        },
+        "cordova-plugin-intercom": {
+            "PACKAGE_NAME": "com.i2cs.mstgolf"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.i2cs.mstgolf"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.i2cs.mstgolf"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.i2cs.mstgolf"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.i2cs.mstgolf"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.i2cs.mstgolf"
+        },
+        "ionic-plugin-deploy": {
+            "PACKAGE_NAME": "com.i2cs.mstgolf"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.i2cs.mstgolf"
+        },
+        "onesignal-cordova-plugin": {
+            "PACKAGE_NAME": "com.i2cs.mstgolf"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-compat": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mstgolf"
         }
     }
 }

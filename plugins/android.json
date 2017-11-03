@@ -22,6 +22,9 @@
         "cordova-plugin-device-orientation": {
             "PACKAGE_NAME": "com.i2cs.mobile.demo"
         },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+        },
         "cordova-plugin-google-analytics": {
             "PACKAGE_NAME": "com.i2cs.mobile.demo"
         },
@@ -52,7 +55,7 @@
         "onesignal-cordova-plugin": {
             "PACKAGE_NAME": "com.i2cs.mobile.demo"
         },
-        "cordova-plugin-geolocation": {
+        "cordova-plugin-intercom": {
             "PACKAGE_NAME": "com.i2cs.mobile.demo"
         }
     },
