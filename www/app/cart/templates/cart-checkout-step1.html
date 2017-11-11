@@ -24,6 +24,17 @@
                     <span class="input-label" i18n="cart.order_telephone"></span>
                     <input type="tel" data-i18n-attr="{placeholder: 'cart.order_telephone'}" ng-model="checkout.telephone" name="telephone" required>
                 </label>
+				<label class="item item-input item-select">
+					<span class="input-label" i18n="cart.order_membership" ng-init="checkout.custom_field_1 = '2'"></span>
+                    <select ng-model="checkout.custom_field_1" name="custom_field_1" required>
+						<option value="2" ng-selected="2 == checkout.custom_field_1">No</option>
+						<option value="1" ng-selected="1 == checkout.custom_field_1">Yes</option>
+					</select>
+				</label>
+				<label ng-if="checkout.custom_field_1 == 1" class="item item-input item-floating-label">
+                    <span class="input-label" i18n="cart.order_membership_id"></span>
+                    <input type="text" data-i18n-attr="{placeholder: 'cart.order_membership_id'}" ng-model="checkout.custom_field_2" name="custom_field_2">
+                </label>
 
                 <div class="item item-divider">
                     <span i18n="cart.order_your_address"></span>

@@ -250,6 +250,10 @@ angular
             } else {
                 $ionicLoading.show();
 
+				$scope.checkout['custom_field'] = [];
+				$scope.checkout['custom_field'][1] = $scope.checkout.custom_field_1;
+				$scope.checkout['custom_field'][2] = $scope.checkout.custom_field_2;
+				
                 CartService.SetPersonalInfo($scope.checkout).then(function (data) {
                     $scope.checkout.personaInfo--;
                 }, function (data) {
