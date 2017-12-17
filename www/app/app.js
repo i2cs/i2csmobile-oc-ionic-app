@@ -121,17 +121,11 @@ var starter = angular.module('starter', ['ionic', 'ngCordova', 'angular-preload-
     })
     //list of languages currently supported
     .value('localeSupported', [
-        'en-US',
-        'fr-FR',
-        'zh-CN',
-        'ar-EG'
+        'ar-SA'
     ])
     //fallbacks when a particular language is present but not for the region from which the app is being opened (e.g. en-GB will use en-US)
     .value('localeFallbacks', {
-        'en': 'en-US',
-        'fr': 'fr-FR',
-        'zh': 'zh-CN',
-        'ar': 'ar-EG'
+        'ar': 'ar-SA'
     })
     .config(function ($stateProvider) {
         /**

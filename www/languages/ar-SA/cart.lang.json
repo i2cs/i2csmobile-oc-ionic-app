@@ -1,0 +1,71 @@
+{
+  "title_order_added": "تمت إضافة الطلب",
+  "title_cart_home": "عربة التسوق",
+  "title_checkout": "إنهاء الطلب",
+  "title_delivery_payment": "التسليم والدفع",
+  "title_invoice": "فاتورة",
+  
+  "enter_coupon_title":  "هل لديك قسيمة تخفيض?",
+  "enter_coupon_label": "أدخل القسيمة هنا",
+  "added_coupon_text":  "تمت إضافة القسيمة!",
+  "enter_coupon_button" :  "أرسل",
+
+  "order_added_title": "تمت إضافة الطلب!",
+  "order_added_desc": "يرجى التحقق من بريدك الإلكتروني للحصول على مزيد من المعلومات",
+  "go_to_shop": "أذهب الى المتجر",
+
+  "empty_message": "عربة التسوق فارغة!",
+  "product_code": "كود المنتج:{code}",
+
+  "delivery_method" :  "طريقة التوصيل",
+  "payment_method" :  "طريقة الدفع او السداد",
+  "comments_section" :  "إضافة تعليق",
+  "comments": "تعليقات / تعليمات",
+
+  "invoice_address" :  "عنوان",
+
+  "error_firstname_required" :  "يرجى ادخال الاسم الاول",
+  "error_lastname_required" :  "يرجى ادخال الاسم الثاني ",
+  "error_email_required" :  "الرجاء إدخال عنوان البريد الإلكتروني الخاص بك",
+  "error_email_invalid" :  "رجاء قم بإدخال بريد الكتروني صحيح",
+  "error_telephone_required" :  "يرجى إدخال رقم الجوال الخاص بك",
+  "error_address_1_required" :  "الرجاء إدخال سطر العنوان 1",
+  "error_city_required" :  "الرجاء إدخال مدينتك",
+  "error_postal_code_required" :  "الرجاء إدخال رمز البريد",
+  "error_postal_code_minlength" :  "الرمز البريدي هو رقم مكون من 5 أرقام",
+  "error_postal_code_maxlength" :  "الرمز البريدي هو رقم مكون من 5 أرقام",
+  "error_country_id_required" :  "الرجاء إدخال بلدك",
+  "error_zone_id_required": "الرجاء إدخال المنطقة أو الولاية",
+
+  "error_shipping_method_required" :  "يرجى تحديد طريقة الشحن",
+  "error_payment_method_required" :  "الرجاء إدخال طريقة دفع",
+
+
+  "button_remove": "إزالة",
+  "button_shopping": "بدء التسوق",
+  "button_offers": "عروض",
+  "button_next": "التالى",
+  "button_confirm": "تأكيد",
+
+  "order_your_details": "معلوماتك الشخصية",
+  "order_firstname": "الأسم الأول",
+  "order_lastname": "الأسم الثاني",
+  "order_email": "البريد الإلكتروني",
+  "order_telephone": "الجوال",
+  "order_your_address": "عنوانك",
+  "order_address1": "العنوان 1",
+  "order_address2": "العنوان 2",
+  "order_city": "المدينة",
+  "order_postal": "الرمز البريدي",
+  "order_country": "الدولة",
+  "order_region": "المنطقة / الولاية",
+
+  "warning_fields_missing": "يرجى ملء الحقول التالية",
+  "rewards_login_to_see": "سجل الدخول للاطلاع على نقاط المكافآت",
+  "enter_rewards_title": "استخدام نقاط المكافأة (الحد الأقصى: {reward})",
+  "enter_rewards_label": "أدخل نقاط المكافأة لاسترداد القيمة هنا",
+  "enter_rewards_button": "استخدام المكافآت",
+  "Cart_item_reward_points": "نقاط مكافأة: {reward}",
+  "locate_address": "حدد العنوان"
+
+}

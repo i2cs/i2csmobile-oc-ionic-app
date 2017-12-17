@@ -1,10 +1,10 @@
 angular.module('starter')
     //.constant('BASE_URL', 'http://localhost/opencart-2.3.0.2/upload/index.php')
-    .constant('BASE_URL', 'http://ocdemo.i2csmobile.com/index.php')
+    .constant('BASE_URL', 'http://genan.sa')
     //.constant('BASE_API_URL', 'http://localhost/opencart-2.3.0.2/upload/index.php?route=api2')
-    .constant('BASE_API_URL', 'http://ocdemo.i2csmobile.com/index.php?route=api2')
-    .constant('WEBSITE', 'http://ocdemo.i2csmobile.com')
-    .constant('FORGOT_LINK', 'http://ocdemo.i2csmobile.com/index.php?route=account/forgotten')
+    .constant('BASE_API_URL', 'http://genan.sa?route=api2')
+    .constant('WEBSITE', 'http://genan.sa')
+    .constant('FORGOT_LINK', 'http://genan.sa?route=account/forgotten')
     .constant('EMAIL', 'sales@i2csmobile.com')
     .constant('PHONE', '+94712966650')
     .constant('ANALYTICS_ID', 'UA-79548648-1')
@@ -12,10 +12,7 @@ angular.module('starter')
     .constant('REWARDS_ENABLED', true)
     .constant('STATUSBAR_COLOR', "#387ef5")
     .constant('LANGUAGES', [
-            { name: "English", language_id: "en-US" },
-            { name: "French", language_id: "fr-FR" },
-            { name: "Chinese", language_id: "zh-CN" },
-            { name: "Arabic", language_id: "ar-EG" }])
+            { name: "Arabic", language_id: "ar-SA" }])
     .constant('WELCOME_SLIDES', [
             {
                 title: "Welcome 😍 to i2CSMobile Demo!",
@@ -45,8 +42,8 @@ angular.module('starter')
     ])
     .constant('RTL_LANGUAGES', ['ar'])
     .constant('INTERCOM_INTEGRATION', false) // please check www/app/common/services/intercom.service.js
-    .constant('ONESIGNAL_APP_ID', "7c52a5dd-06b6-4d47-9045-830139d76564") // get OneSignal app id from http://onesignal.com
-    .constant('GCM_SENDER_ID', "1037766790597")
+    .constant('ONESIGNAL_APP_ID', "7bf9c483-9c2c-4b89-8773-69ea437e6055") // get OneSignal app id from http://onesignal.com
+    .constant('GCM_SENDER_ID', "148140561589")
     .constant('MENU_LAYOUT', "tabs")
 
     // if demo mode is set to true, some dynamic configurations 

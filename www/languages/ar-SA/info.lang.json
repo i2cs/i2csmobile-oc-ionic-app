@@ -1,0 +1,40 @@
+{
+  "title_info_home": "معلومات",
+  "title_info_orders": "الطلبات",
+  "title_info_order": "الطلب",
+  "title_info_wishlist":  "قائمة الرغبات",
+
+  "order_invoice_data": "تاريخ الفاتورة",
+  "order_invoice_number": "فاتورة #",
+  "order_order_number": "طلب #",
+  "order_date": "تاريخ",
+  "order_address": "العنوان",
+  "order_method": "طريقة",
+  "order_invoice_items": "عناصر الفاتورة",
+  "order_product_code": "كود المنتج :{code}",
+  "order_history": "الطلبات السابقة",
+
+
+  "buttons_logout": "خروج",
+  "buttons_login": "دخول",
+  "buttons_orders": "الطلبات",
+  "buttons_notifications": "الأشعارات",
+  "buttons_contact": "اتصل",
+  "buttons_about": "من نحن",
+  "buttons_language": "اللغة",
+  "buttons_currency": "العملة",
+  "buttons_more": "أكثر",
+  "buttons_wishlist": "قائمة الرغبات",
+
+  "errors_no_orders": "ليس لديك أي طلب حتى الآن!",
+  "errors_empty_wishlist": "قائمة رغباتك فارغه!",
+  
+  "contact_success": "تم إرسال رسالتك بنجاح",
+  "contact_name": "اسمك",
+  "contact_email": "بريدك الالكتروني",
+  "contact_enquiry": "رسالتك",
+  "contact_send_button": "أرسل",
+  "reward_points_label": "نقاط مكافأة",
+  "buttons_layout" :  "قائمة التطبيق (مثال توضيحي)",
+  "buttons_chat": "دردشة"
+}

@@ -1,0 +1,58 @@
+{
+  "featured_title": "منتجات مميزة",
+  "latest_title": "أحدث المنتجات",
+  "off": "{percent}% خصم",
+
+  "title_shop_search": "بحث",
+  "search_hint": "ابدأ في كتابة شيء للبحث",
+  "errors_search_no_results": "لايوجد منتج مطابق لمعايير البحث",
+
+  "title_list_page": "المتجر",
+  "item_page_off": "{percent}% خصم",
+  "share_product_with_friends": "مشاركة هذا المنتج مع أصدقائك",
+  "special_price": "سعر خاص لمستخدمي التطبيق",
+  "item_description": "الوصف",
+  "item_view_all": "عرض الكل",
+  "item_view_less": "عرض أقل",
+  "item_specification": "تخصيص",
+  "item_available_options": "الخيارات المتاحة",
+  "item_quantity": "كمية",
+  "item_related_products": "منتجات ذات صله",
+  "item_button_add_to_cart": "أضف إلى السلة",
+  "item_button_buy_now": "اشتري الآن",
+  "categories": "الاقسام",
+
+  "item_tabs_details": "تفاصيل",
+  "item_tabs_photos": "الصور",
+  "item_tabs_reviews": "التعليقات",
+  "item_tabs_share": "شارك",
+
+  "item_rating_name": "اسمك",
+  "item_rating_comment": "مراجعتك",
+  "item_rating_load_more": "تحميل المزيد",
+  "item_rating_author": "بواسطة {author} أضيفت {added}",
+  "item_rating_post_review": "مراجعة آخر",
+
+  "error_required_fields": "الرجاء إدخال قيم الحقول التالية",
+  "error_not_connected_cache_failed": "يرجى الاتصال بالإنترنت لتحميل هذا الصنف",
+  "error_not_connected_cache_success": "تم تحميل المنتج من ذاكرة التخزين المؤقت. الاتصال بالإنترنت لتحميل التفاصيل الحية",
+
+  "wishlist_updated": "تم تحديث قائمة الرغبات",
+  "wishlist_item_added_to_list": "تمت إضافة العنصر إلى قائمة الرغبات",
+  "wishlist_item_added_to_list_login_to_save": "تمت إضافة المنتج إلى قائمة الرغبات الرجاء تسجيل الدخول أو التسجيل لحفظ قائمة الرغبات",
+  "wishlist_item_added_already": "تمت إضافة العنصر من قبل إلى قائمة الرغبات",
+  "wishlist_go_to": "الذهاب إلى قائمة الرغبات",
+
+  "item_view_button": "عرض",
+  "item_add_to_wishlist_button": "أضف إلى قائمة الرغبات",
+
+  "added_to_cart_title": "تمت الإضافة إلى السلة",
+  "added_to_cart_desc": "تمت إضافة العنصر إلى سلة التسوق. ماذا تريد ان تفعل?",
+  "button_shop_more": "تسوق أكثر",
+  "button_go_to_cart": "انتقل إلى سلة التسوق",
+  "warning_options_missing": "حدد الخيارات التالية",
+  "error_cant_add_to_cart": "خطأ. لا يمكن إضافة إلى العربة",
+
+  "search_label": "بحث",
+  "reward_points": "نقاط مكافأة : {reward}"
+}
