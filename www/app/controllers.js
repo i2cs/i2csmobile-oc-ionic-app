@@ -18,7 +18,7 @@
 */
 angular.module('starter')
     .controller('WelcomeCtrl', function ($scope, $rootScope, $timeout, $state, $ionicModal, $ionicPlatform, $localStorage, locale, i18nService, dataService, appService, STATUSBAR_COLOR) {
-        $localStorage.lang = $localStorage.lang || 'ar-SA';
+        $localStorage.lang = 'ar-SA';
 
         $timeout(function () {
             var lang = $localStorage.lang || 'ar-SA';
