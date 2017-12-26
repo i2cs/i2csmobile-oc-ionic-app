@@ -64,25 +64,23 @@ angular.module('starter')
                 appService.Login($localStorage.login).then(function (data) {
                     $scope.text = locale.getString('common.welcome_loading_store');
                     $timeout(function () {
-                        $scope.goHome();
+                        //$scope.goHome();
                     }, 500);
                 }, function (data) {
                     $scope.text = locale.getString('common.welcome_retrying');
                     $timeout(function () {
-                        $scope.goHome();
+                        //$scope.goHome();
                     }, 500);
                 })
             } else {
                 $timeout(function () {
-                    $scope.goHome();
+                    //$scope.goHome();
                 }, 500);
             }
         });
 
         $scope.openInAppBrowser = function(){
-            var cordova = {};
-            cordova.inAppBrowser = window;
-            var inappbrowser = cordova.InAppBrowser.open('fekrait.com','_blank', 'location=no');
+            cordova.InAppBrowser.open('http://fekrait.com','_blank', 'location=no');
         }
     })
 
