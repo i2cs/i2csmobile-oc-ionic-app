@@ -78,6 +78,12 @@ angular.module('starter')
                 }, 500);
             }
         });
+
+        $scope.openInAppBrowser = function(){
+            var cordova = {};
+            cordova.inAppBrowser = window;
+            var inappbrowser = cordova.InAppBrowser.open('fekrait.com','_blank', 'location=no');
+        }
     })
 
 
@@ -212,7 +218,7 @@ angular.module('starter')
         if (!$rootScope.data.notInitialLoad) {
             $rootScope.welcome = WELCOME_SLIDES || [];
             $rootScope.data.notInitialLoad = true;
-            $rootScope.openWelcomeModal();
+            // $rootScope.openWelcomeModal();
         }
 
         CartService.GetAddress().then(function (data) {

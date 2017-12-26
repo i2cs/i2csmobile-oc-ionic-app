@@ -230,22 +230,14 @@ body[dir=rtl] > ion-nav-view > .pane {
 }
 
 .splash-screen {
-    background-color: $color_animate_from;
+    background-color: #FFFFFF;
     height: 100%;
     width: 100%;
     vertical-align: middle;
     text-align: center;
     display: block;
     vertical-align: middle;
-    color: #FFF;
-    -webkit-animation: color_animate $color_animate_duration infinite alternate;
-    -moz-animation: color_animate $color_animate_duration infinite alternate;
-    -ms-animation: color_animate $color_animate_duration infinite alternate;
-    -o-animation: color_animate $color_animate_duration infinite alternate;
-    animation: color_animate $color_animate_duration infinite alternate;
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    transform-style: preserve-3d;
+    color: #505050;
 }
 
 .color-animate {

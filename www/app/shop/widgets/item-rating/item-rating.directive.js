@@ -24,8 +24,8 @@ angular.module('shop.module')
                scope.ratingsSettings = {
                    iconOn: 'ion-ios-star',
                    iconOff: 'ion-ios-star-outline',
-                   iconOnColor: '#387ef5',
-                   iconOffColor: '#387ef5',
+                   iconOnColor: '#D0A36B',
+                   iconOffColor: '#D0A36B',
                    rating: scope.item.rating,
                    callback: function (rating) {
                        scope.ratingsCallback(rating);

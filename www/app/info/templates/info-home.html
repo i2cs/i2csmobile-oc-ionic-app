@@ -1,7 +1,7 @@
 <ion-view view-title="{{ 'info.title_info_home' | i18n }}">
 
     <ion-content  elastic-header="info-elastic-header" delegate-handle="example-scroller">
-        <img src="img/info-header.png" id="info-elastic-header" width="100%" />
+        <img src="img/info-header.jpg" id="info-elastic-header" width="100%" />
         <div class="list">
             <div style="border-top: 0;" ng-if="data.user && data.user.customer_id" class="item item-icon-left item-button-right">
                 <i class="icon ion-ios-person-outline"></i> {{::data.user.firstname}} {{::data.user.lastname}} 
@@ -33,19 +33,6 @@
             <a class="item item-icon-left" ng-click="openChat()" ng-if="chat_enabled">
                 <i class="icon ion-ios-chatboxes-outline"></i> <span i18n="info.buttons_chat"></span>
             </a>
-            <label class="item item-input item-select">
-                <div class="input-label" i18n="info.buttons_language"></div>
-                <language-switch></language-switch>
-            </label>
-			<label class="item item-input item-select">
-                <div class="input-label" i18n="info.buttons_currency"></div>
-                <currency-switch></currency-switch>
-            </label>
-            <!-- remove this item on production -->
-            <label class="item item-input item-select" ng-if="demo_mode">
-                <div class="input-label" i18n="info.buttons_layout"></div>
-                <menu-switch></menu-switch>
-            </label>
             <a class="item item-icon-left item-divider" ng-if="demo_mode" href="http://i2csmobile.com/market" target="_system">
                 <i class="icon ion-ios-cart-outline"></i> <span>Buy source code from i2csmobile.com</span>
             </a>
