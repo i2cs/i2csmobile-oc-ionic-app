@@ -64,17 +64,17 @@ angular.module('starter')
                 appService.Login($localStorage.login).then(function (data) {
                     $scope.text = locale.getString('common.welcome_loading_store');
                     $timeout(function () {
-                        //$scope.goHome();
+                        $scope.goHome();
                     }, 500);
                 }, function (data) {
                     $scope.text = locale.getString('common.welcome_retrying');
                     $timeout(function () {
-                        //$scope.goHome();
+                        $scope.goHome();
                     }, 500);
                 })
             } else {
                 $timeout(function () {
-                    //$scope.goHome();
+                    $scope.goHome();
                 }, 500);
             }
         });
