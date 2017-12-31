@@ -28,3 +28,7 @@
 .bar .title.title-left {
     text-align: right;
 }
+
+.toggle-small .handle {
+    top: 8px;
+}
