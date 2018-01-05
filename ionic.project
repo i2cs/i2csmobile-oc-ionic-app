@@ -1,6 +1,6 @@
 {
   "name": "i2CS Mobile OC",
-  "app_id": "",
+  "app_id": "a531057b",
   "watchPatterns": [
     "www/**/*",
     "!www/lib/**/*"
