@@ -1,1 +1,23 @@
 /* custom css goes here */
+.justify-product-button {
+    margin: -5px;
+}
+
+.tab-title {
+    font-family: "DroidKufi", serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.align-right {
+    float: right;
+    text-align: right;
+}
+
+.bar .title {
+    text-align: right;
+}
+
+.bar .title.title-left {
+    text-align: right;
+}
