@@ -6,11 +6,11 @@
   "contact_modal_main": "嗨！需要帮助？联系我们！",
   "contact_modal_desc": "与往常一样，我们很乐意为您服务！选择一个办法联系",
   "about_modal_title": "关于",
-  "about_modal_main": "I2CS 移动应用的 Opencart 后端",
+  "about_modal_main": "BityWrehla 移动应用的 Opencart 后端",
   "about_modal_desc": "电邮我们获取更多信息",
   "no_internet_modal_title": "互联网断开",
   "no_internet_modal_main": "没有互联网",
-  "no_internet_modal_desc": "我们需要互联网连接到i2CSMobile。请检查您的手机连接互联网",
+  "no_internet_modal_desc": "我们需要互联网连接到BityWrehlaMobile。请检查您的手机连接互联网",
   "registered_title": "欢迎个I2C！",
   "registered_main": "{firs​​tname} 您好，你现在注册！",
   "registered_desc": "现在，你就可以申请移动只有优惠！请访问我们的产品名单，现在得到您的折扣！",
@@ -75,7 +75,7 @@
   "button_forgot_pass": "忘记密码？",
   "button_close": "关",
   "button_create_account": "创建帐号",
-  "error_password_reset_inappbrowser": "请使用浏览器，然后导航至 i2csmobile.com 更改您的密码",
+  "error_password_reset_inappbrowser": "请使用浏览器，然后导航至 BityWrehlamobile.com 更改您的密码",
   "error_loading_zones": "错误而载入区",
 
   "connect_with_existing_account": "连接现有帐户"
