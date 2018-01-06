@@ -30,13 +30,17 @@
     left: 57px !important;
 }
 
-.toggle-small .handle {
-    top: 8px;
-}
-
 .item-input input{
     padding-right: 2px;
 }
 .card .item.item-input input, .list-inset .item.item-input input, .padding-horizontal > .list .item.item-input input, .padding > .list .item.item-input input {
     padding-right: 2px;
+}
+
+.button{
+    background-color:#DDDDDD;
+}
+
+.button.button-balanced {
+    background-color: #444;
 }
