@@ -212,7 +212,6 @@ angular.module('starter')
         if (!$rootScope.data.notInitialLoad) {
             $rootScope.welcome = WELCOME_SLIDES || [];
             $rootScope.data.notInitialLoad = true;
-            $rootScope.openWelcomeModal();
         }
 
         CartService.GetAddress().then(function (data) {
