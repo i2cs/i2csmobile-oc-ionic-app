@@ -91,4 +91,5 @@
     <plugin name="cordova-plugin-console" spec="1.0.3" />
     <plugin name="cordova-plugin-geolocation" spec="2.4.2" />
     <plugin name="cordova-plugin-intercom" spec="3.0.11" />
+    <plugin name="cordova-plugin-compat" spec="^1.2.0" />
 </widget>

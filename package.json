@@ -83,7 +83,8 @@
       "onesignal-cordova-plugin": {},
       "cordova-plugin-console": {},
       "cordova-plugin-geolocation": {},
-      "cordova-plugin-intercom": {}
+      "cordova-plugin-intercom": {},
+      "cordova-plugin-compat": {}
     },
     "platforms": [
       "android"
