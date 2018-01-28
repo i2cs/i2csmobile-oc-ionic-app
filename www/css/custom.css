@@ -1,7 +1,7 @@
 /* custom css goes here */
 @font-face {
-    font-family: "DroidKufi";
-    src: url("fonts/DroidKufi-Regular.ttf") format("truetype");
+    font-family: "GE_SS_Text_Light";
+    src: url("fonts/GE_SS_Text_Light.otf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -11,7 +11,7 @@
 }
 
 .tab-title {
-    font-family: "DroidKufi", serif;
+    font-family: "GE_SS_Text_Light", serif;
     font-weight: normal;
     font-style: normal;
 }
