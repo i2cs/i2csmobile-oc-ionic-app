@@ -44,3 +44,7 @@
 .button.button-balanced {
     background-color: #444;
 }
+
+.item-button-right, a.item.item-button-right, button.item.item-button-right {
+    padding-right: 20px;
+}
