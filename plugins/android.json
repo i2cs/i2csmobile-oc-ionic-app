@@ -13,9 +13,6 @@
     "cordova-plugin-app-version": {
       "PACKAGE_NAME": "com.i2cs.mobile.demo"
     },
-    "cordova-plugin-console": {
-      "PACKAGE_NAME": "com.i2cs.mobile.demo"
-    },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.i2cs.mobile.demo"
     },

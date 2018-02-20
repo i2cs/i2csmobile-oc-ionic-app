@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="1700" id="com.i2cs.mobile.demo" version="1.7.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="1700" id="com.i2cs.mobile.genan" version="1.7.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Genan</name>
     <description>i2cs mobile app demo for OpenCart backend</description>
     <author email="poosathecat@gmail.com">i2cs solutions</author>
