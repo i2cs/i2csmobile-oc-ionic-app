@@ -4,6 +4,7 @@
   "description": "i2cs mobile app for OpenCart",
   "dependencies": {
     "cordova-android": "^6.3.0",
+    "cordova-ios": "^4.5.4",
     "cordova-plugin-app-event": "1.2.0",
     "cordova-plugin-app-version": "0.1.8",
     "cordova-plugin-compat": "^1.2.0",
@@ -62,7 +63,6 @@
     "cordova-plugin-geolocation@2.4.2"
   ],
   "cordovaPlatforms": [
-    "ios",
     "android"
   ],
   "cordova": {
