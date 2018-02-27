@@ -8,58 +8,61 @@
     },
     "installed_plugins": {
         "cordova-plugin-app-event": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.genan"
         },
         "cordova-plugin-app-version": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.genan"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.i2cs.mobile.genan"
         },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.genan"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.genan"
         },
         "cordova-plugin-device-orientation": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
-        },
-        "cordova-plugin-google-analytics": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
-        },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
-        },
-        "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
-        },
-        "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
-        },
-        "ionic-plugin-deploy": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
-        },
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
-        },
-        "onesignal-cordova-plugin": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.genan"
         },
         "cordova-plugin-geolocation": {
             "GEOLOCATION_USAGE_DESCRIPTION": " ",
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.genan"
+        },
+        "cordova-plugin-google-analytics": {
+            "PACKAGE_NAME": "com.i2cs.mobile.genan"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.i2cs.mobile.genan"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.i2cs.mobile.genan"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.i2cs.mobile.genan"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.i2cs.mobile.genan"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.i2cs.mobile.genan"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.i2cs.mobile.genan"
+        },
+        "ionic-plugin-deploy": {
+            "PACKAGE_NAME": "com.i2cs.mobile.genan"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.i2cs.mobile.genan"
+        },
+        "onesignal-cordova-plugin": {
+            "PACKAGE_NAME": "com.i2cs.mobile.genan"
         }
     },
     "dependent_plugins": {
-        "cordova-plugin-compat": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+        "cordova-plugin-intercom": {
+            "PACKAGE_NAME": "com.i2cs.mobile.genan"
         }
     }
 }

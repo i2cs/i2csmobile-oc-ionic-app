@@ -62,11 +62,11 @@
     "cordova-plugin-geolocation@2.4.2"
   ],
   "cordovaPlatforms": [
-    "ios",
     {
       "platform": "android",
       "locator": "browser"
-    }
+    },
+    "ios"
   ],
   "cordova": {
     "plugins": {
