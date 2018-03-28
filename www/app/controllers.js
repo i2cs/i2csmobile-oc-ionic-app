@@ -115,6 +115,7 @@ angular.module('starter')
         $rootScope.data = $localStorage;
         $rootScope.email = EMAIL;
         $rootScope.phone = PHONE;
+		$rootScope.noLoginSignupPopup = true;
 
         $rootScope.data.menu = $rootScope.data.menu ? $rootScope.data.menu : MENU_LAYOUT;
 
