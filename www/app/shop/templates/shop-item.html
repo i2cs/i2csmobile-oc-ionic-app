@@ -10,7 +10,7 @@
                 <ion-nav-view name="">
                     <ion-content elastic-header="item-elastic-header" delegate-handle="example-scroller" class="has-sub-tabs-top">
                         <div class="padding text-center">
-                            <ion-slide-box id="item-elastic-header">
+                            <ion-slide-box id="item-elastic-header" active-slide="getActiveSlide()">
                                 <ion-slide ng-repeat="img in ::item.images">
                                     <div class="itemshow"><img preload-image ng-src="{{::img.preview}}" default-image="app/shop/images/placeholder.png" fallback-image="app/shop/images/placeholder.png" /></div>
                                 </ion-slide>
@@ -104,9 +104,9 @@
                                     <ion-scroll direction="x">
                                         <div class="row image-option-selector">
                                             <label class="col" ng-repeat="value in option.product_option_value" >
-                                                <input type="radio"  ng-required="option.required" name="options_{{option.product_option_id}}" ng-model="cart.options[option.product_option_id]" value="{{value.product_option_value_id}}" />
+                                                <input type="radio" ng-required="option.required" ng-click="changeSlider(value.image)" name="options_{{option.product_option_id}}" ng-model="cart.options[option.product_option_id]" value="{{value.product_option_value_id}}" />
                                                 <img ng-src="{{value.image}}">
-                                                <div>{{value.name}}</div>
+                                                <!--<div>{{value.name}}</div>-->
                                             </label>
                                         </div>
                                     </ion-scroll>

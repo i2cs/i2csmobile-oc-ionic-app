@@ -143,7 +143,7 @@ angular
          * @returns {promise} Returns a promise of the API call.
          */
         this.GetCategories = function (id) {
-            return dataService.apiSecuredPost('/category/all', {path :id});
+            return dataService.apiSecuredPost('/category/all', {path :id, per_page : 100});
         }
 
         /**
@@ -355,6 +355,18 @@ angular
                         var p = parseInt(data.products[i].price_clear);
                         data.products[i].off = Math.ceil((p - s) / p * 100);
                     }
+                }
+
+                for(var i in data.options){
+                    var image = false;
+                    for(var j in data.options[i]['product_option_value']){
+                        if(data.options[i]['product_option_value'][j].image){
+                            image = true;
+                            break;
+                        }
+                    }
+
+                    data.options[i]['type'] = "image";
                 }
 
                 data.review_status = data.review_status == "1";

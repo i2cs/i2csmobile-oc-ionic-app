@@ -20,7 +20,7 @@ angular
         $scope.endOfRLatestItems = false;
         $scope.loadingLatest = false;
         var initialCall = true;
-
+        $scope.activeSlide = 0;
         // sync form input to localstorage
         $localStorage.home = $localStorage.home || {};
         $scope.data = $localStorage.home;
@@ -419,6 +419,22 @@ angular
                 $scope.item.special = $scope.item.currency_format.replace("{value}", Number($scope.item.special_clear_temp).toFixed($scope.item.decimal_place));
         }
 
+        $scope.changeSlider = function (image) {
+            var imagePrefixUrl = image.split('-')[0];
+
+            for (var i = 0; i < $scope.item.images.length; i++) {
+                var imgObj = $scope.item.images[i];
+                console.log(imgObj);
+                if (imgObj.popup.indexOf(imagePrefixUrl) != -1) {
+                    $scope.activeSlide = i;
+                    break;
+                }
+            }
+        };
+
+        $scope.getActiveSlide = function () {
+            return $scope.activeSlide
+        }
     });
 
 
@@ -492,17 +508,17 @@ angular
 
 
 /**
-* @ngdoc controller
-* @name shop.module.controller:ShopSearchCtrl
-* @requires $scope
-* @requires $rootScope
-* @requires $ionicScrollDelegate
-* @requires $stateParams
-* @requires ShopService
-* @description
-* Search page shows a search input box and filters the product catalog for the customer entered
-* keywords.
-*/
+ * @ngdoc controller
+ * @name shop.module.controller:ShopSearchCtrl
+ * @requires $scope
+ * @requires $rootScope
+ * @requires $ionicScrollDelegate
+ * @requires $stateParams
+ * @requires ShopService
+ * @description
+ * Search page shows a search input box and filters the product catalog for the customer entered
+ * keywords.
+ */
 angular
     .module('shop.module')
     .controller('ShopSearchCtrl', function ($scope, $rootScope, $ionicScrollDelegate, $stateParams, ShopService) {
