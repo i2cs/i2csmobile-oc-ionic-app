@@ -14,4 +14,4 @@ angular.module('payments.module', ['ui.router', 'advertikon_stripe.module']);
 ```
 *
 **/
-angular.module('payments.module', ['ui.router', 'advertikon_stripe.module', 'i2cs_alipay.module', 'pp_express.module', 'payfort_fort.module']);
+angular.module('payments.module', ['ui.router', 'advertikon_stripe.module', 'i2cs_alipay.module', 'pp_express.module']);
