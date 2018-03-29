@@ -22,7 +22,7 @@ angular
         var initialCall = true;
         $scope.activeSlide = 0;
         // sync form input to localstorage
-        $localStorage.home = $localStorage.home || {};
+        $localStorage.home = /*$localStorage.home ||*/ {};
         $scope.data = $localStorage.home;
         $scope.latestPage = 1;
 
@@ -151,7 +151,7 @@ angular
             }, 0)
         });
 
-        $localStorage.item_cache = $localStorage.item_cache || {};
+        $localStorage.item_cache = /*$localStorage.item_cache ||*/ {};
         $scope.item_cache = $localStorage.item_cache;
 
         $ionicLoading.show();

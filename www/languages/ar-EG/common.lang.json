@@ -1,10 +1,10 @@
 {
-    "welcome_title": "i2cs التطبيق المحمول لOpenCart",
-    "welcome_connecting": "الاتصال i2CS ...",
+    "welcome_title": "تطبيق موبايل جلامور بيوتي",
+    "welcome_connecting": "الاتصال info@glamourbeauty.net",
     "welcome_connected": "إتصال! تحميل التطبيق ..",
     "welcome_logging_in": "Loggin في ...",
-    "welcome_loading_store": "كل شيء جيد .. تحميل مخزن ...",
-    "welcome_retrying": "خطأ .. مخزن تحميل ...",
+    "welcome_loading_store": "تحميل التطبيق ",
+    "welcome_retrying": "خطأ .. اعادة التحميل ...",
     "welcome_error": "عفوا! حدث خطأ ..",
 	"information_popup": "معلومات"
 }
