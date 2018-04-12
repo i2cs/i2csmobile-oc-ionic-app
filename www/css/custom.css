@@ -54,3 +54,9 @@
 .button .icon {
     color: #000000;
 }
+
+.shadow{
+    -webkit-box-shadow: 10px 10px 35px -5px rgba(240,240,240,1);
+    -moz-box-shadow: 10px 10px 35px -5px rgba(240,240,240,1);
+    box-shadow: 10px 10px 35px -5px rgba(240,240,240,1);
+}

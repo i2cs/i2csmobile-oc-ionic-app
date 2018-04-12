@@ -15,11 +15,19 @@
             </button>
         </div>
 
-        <category-list thumbnail="false" mode="vertical" category="id"></category-list>
+        <!--<category-list thumbnail="false" mode="horizontal" category="id" style="color: #000000"></category-list>-->
 
         <div class="recent-items-list" ng-class="{'row grid_mode' : grid_mode, 'list': !grid_mode}">
-            <div class="item" ng-repeat="item in items" ng-class="{'col-50' : grid_mode}">
-                <item-template item="item" mode="3"></item-template>
+            <div class="item" ng-repeat="item in gridItems" ng-class="{'col-50' : grid_mode}">
+                <div class="row">
+
+                    <div class="col-50 shadow" style="padding: 15px">
+                        <item-template item="item.rightItem" mode="3"></item-template>
+                    </div>
+                    <div class="col-50 shadow" style="padding: 15px">
+                        <item-template item="item.leftItem" mode="3"></item-template>
+                    </div>
+                </div>
             </div>
             <ion-item ng-if="items.length < 1">{{::text_empty}}</ion-item>
             <ion-infinite-scroll ng-if="!endOfItems" on-infinite="loadNextPage()" distance="1%"></ion-infinite-scroll>

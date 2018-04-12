@@ -467,6 +467,7 @@ angular
         $scope.refreshUI = function () {
             $scope.endOfItems = false;
             $scope.items = [];
+            $scope.gridItems = [];
             $scope.page = 1;
             $scope.loadItems();
         }
@@ -478,9 +479,19 @@ angular
 
             $scope.loadingItems = true;
             $scope.items = $scope.items || [];
-
+            $scope.gridItems = [];
             ShopService.GetCategoryProducts($stateParams.id, $scope.page).then(function (data) {
                 $scope.items = $scope.items.concat(data.products);
+
+                for (var i = 0; i < $scope.items.length; i = i + 2) {
+                    var rightItem = $scope.items[i];
+                    var leftItem = $scope.items[i + 1];
+                    var gridItem = {};
+                    gridItem.rightItem = rightItem;
+                    gridItem.leftItem = leftItem;
+                    $scope.gridItems[i / 2] = gridItem;
+                }
+
                 $scope.category_name = data.heading_title;
                 $scope.text_empty = data.text_empty;
                 $scope.page++;

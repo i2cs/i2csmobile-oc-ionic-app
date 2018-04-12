@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget android-versionCode="1700" id="com.i2cs.mobile.demo" version="1.7.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>i2CSMobile Opencart</name>
-  <description>i2cs mobile app demo for OpenCart backend</description>
+  <name>Glamour Beauty</name>
+  <description>Glamour Beauty mobile app for glamourbeauty.com</description>
   <author email="poosathecat@gmail.com">i2cs solutions</author>
   <content src="index.html"/>
   <access origin="*"/>
