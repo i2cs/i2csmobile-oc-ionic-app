@@ -1,10 +1,13 @@
-<ion-scroll direction="x">
-    <div class="row home-category-grid-icons">
-        <a class="col" ng-repeat="category in categories" ng-href="#/app/menu/shop/category/{{::category.category_id}}">
-            <div class="">
-                <img ng-src="{{category.image}}" style="vertical-align:middle;" />
-                <span ng-bind-html="category.name"></span>
-            </div>
+<div class="home-category-grid-icons">
+    <div class="row" ng-repeat="category in modifiedCategories" style="width: 100%">
+        <a style="width: 50%; padding: 5px; height: 30%" ng-href="#/app/menu/shop/category/{{::category.rightCategory.category_id}}">
+            <img ng-src="{{category.rightCategory.image}}" style="text-align: center;" />
+            <span ng-bind-html="category.rightCategory.name" style="text-align: right"></span>
         </a>
+        <a style="width: 50%; padding: 5px;height: 30%" ng-href="#/app/menu/shop/category/{{::category.leftCategory.category_id}}">
+            <img ng-src="{{category.leftCategory.image}}" style="text-align: center"/>
+            <span ng-bind-html="category.leftCategory.name" style="text-align: right"></span>
+        </a>
+    <br>
     </div>
-</ion-scroll>
+</div>

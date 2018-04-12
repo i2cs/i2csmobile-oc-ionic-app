@@ -40,3 +40,17 @@
 .card .item.item-input input, .list-inset .item.item-input input, .padding-horizontal > .list .item.item-input input, .padding > .list .item.item-input input {
     padding-right: 2px;
 }
+
+.home-category-grid-icons img {
+    height: 60%;
+    width: 100%;
+}
+
+.tab-item .icon {
+    color: #000;
+    margin:5px;
+}
+
+.button .icon {
+    color: #000000;
+}

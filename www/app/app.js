@@ -191,7 +191,7 @@ var starter = angular.module('starter', ['ionic', 'ngCordova', 'angular-preload-
     });
 
 starter.config(function ($ionicConfigProvider) {
-    $ionicConfigProvider.tabs.position('top').style('standard');
+    $ionicConfigProvider.tabs.position('bottom').style('standard');
 })
 
 starter.constant('$ionicLoadingConfig', {
