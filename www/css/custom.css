@@ -60,3 +60,48 @@
     -moz-box-shadow: 10px 10px 35px -5px rgba(240,240,240,1);
     box-shadow: 10px 10px 35px -5px rgba(240,240,240,1);
 }
+
+.bar-balanced .button{
+    color: #000;
+}
+
+.bar-balanced .button:hover{
+    color: #000;
+}
+
+.bar.bar-balanced{
+    background-color: #FFFFFF;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.black{
+    color: #000;
+}
+
+.nav-bar-right-margin{
+    margin-right: 10px;
+}
+
+.nav-bar-text-margin{
+    margin-right: -70px;
+}
+
+.item{
+    color: #000000;
+}
+
+.icon-width{
+    width: 50px;
+}
+
+.button{
+    background-color: #FFFFFF;
+    color: #000000;
+}

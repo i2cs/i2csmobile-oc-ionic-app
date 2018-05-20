@@ -53,6 +53,13 @@ angular
             });
         }
 
+        // $scope.loadSpecial = function () {
+        //     ShopService.GetSpecialProducts(1).then(function (data) {
+        //         $scope.data.specialItems = data.products;
+        //         $ionicSlideBoxDelegate.update();
+        //     });
+        // }
+
         $scope.loadLatest = function (refresh) {
             if ($scope.loadingLatest) {
                 return;
@@ -111,6 +118,7 @@ angular
         $scope.loadFeatured();
         $scope.loadBanners();
         $scope.loadLatest();
+        // $scope.loadSpecial();
     });
 
 
