@@ -45,8 +45,8 @@ angular.module('starter')
     ])
     .constant('RTL_LANGUAGES', ['ar'])
     .constant('INTERCOM_INTEGRATION', false) // please check www/app/common/services/intercom.service.js
-    .constant('ONESIGNAL_APP_ID', "7c52a5dd-06b6-4d47-9045-830139d76564") // get OneSignal app id from http://onesignal.com
-    .constant('GCM_SENDER_ID', "1037766790597")
+    .constant('ONESIGNAL_APP_ID', "d628b561-585b-4b3f-98bc-569caea3f59c") // get OneSignal app id from http://onesignal.com
+    .constant('GCM_SENDER_ID', "371712602795")
     .constant('MENU_LAYOUT', "tabs")
 
     // if demo mode is set to true, some dynamic configurations 
