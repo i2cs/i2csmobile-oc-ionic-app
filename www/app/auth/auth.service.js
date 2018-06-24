@@ -1,5 +1,6 @@
 'use strict';
-
+var cordova = {};
+cordova.InAppBrowser = window;
 /**
 * @ngdoc service
 * @name auth.module.AuthService

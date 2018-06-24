@@ -1,6 +1,7 @@
 {
-    "title_list_page": "报价",
-    "title_special_offers": "特别优惠",
-    "title_special_items": "特殊项目",
-    "off": "{percent}％OFF"
+  "title_list_page": "折扣",
+  "title_special_offers": "特別優惠",
+  "title_special_items": "特別項目",
+
+  "off": "{percent}% 折扣"
 }

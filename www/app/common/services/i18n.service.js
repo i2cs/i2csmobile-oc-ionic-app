@@ -26,7 +26,7 @@ angular.module('starter')
         */
         this.SetLanguage = function (lang) {
             if (!angular.isString(lang) || lang.length < 5) {
-                lang = "en-US";
+                lang = "zh-CN";
             }
 
             $localStorage.lang = lang;
@@ -49,7 +49,10 @@ angular.module('starter')
                 $ionicHistory.clearCache();
 
                 // send a request to API
-                return dataService.apiSecuredPost('/language/set', { code: i[0].toLowerCase() });
+				if(lang == "zh-CN")
+					return dataService.apiSecuredPost('/language/set', { code: "zh-TW" });
+				else
+					return dataService.apiSecuredPost('/language/set', { code: i[0].toLowerCase() });
             }
 
 

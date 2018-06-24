@@ -40,7 +40,7 @@
             </button>
         </div>
         <div class="recent-items-list" ng-class="{'row grid_mode' : grid_mode, 'list': !grid_mode}">
-            <div class="item" ng-repeat="item in data.latestItems" ng-class="{'col-50' : grid_mode}">
+            <div class="item" ng-repeat="item in data.latestItems" ng-class="{'col-50' : grid_mode}" style="border: solid 1px #fabfcf;background: #ffe8ee;">
                 <item-template item="item" mode="2"></item-template>
             </div>
 

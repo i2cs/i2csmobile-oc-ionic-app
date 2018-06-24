@@ -18,10 +18,10 @@
 */
 angular.module('starter')
     .controller('WelcomeCtrl', function ($scope, $rootScope, $timeout, $state, $ionicModal, $ionicPlatform, $localStorage, locale, i18nService, dataService, appService, STATUSBAR_COLOR) {
-        $localStorage.lang = $localStorage.lang || 'en-US';
+        $localStorage.lang = $localStorage.lang || 'zh-CN';
 
         $timeout(function () {
-            var lang = $localStorage.lang || 'en-US';
+            var lang = $localStorage.lang || 'zh-CN';
             i18nService.SetLanguage(lang);
         }, 0);
 
@@ -210,9 +210,9 @@ angular.module('starter')
         }
 
         if (!$rootScope.data.notInitialLoad) {
-            $rootScope.welcome = WELCOME_SLIDES || [];
+            //$rootScope.welcome = WELCOME_SLIDES || [];
             $rootScope.data.notInitialLoad = true;
-            $rootScope.openWelcomeModal();
+            //$rootScope.openWelcomeModal();
         }
 
         CartService.GetAddress().then(function (data) {

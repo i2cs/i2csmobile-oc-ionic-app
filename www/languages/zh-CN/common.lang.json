@@ -1,10 +1,10 @@
 {
-    "welcome_title": "I2CS 移动应用程序的 Opencart",
-    "welcome_connecting": "连接到 I2CS ...",
-    "welcome_connected": "连接的！加载应用程序..",
-    "welcome_logging_in": "在洛...",
-    "welcome_loading_store": "所有的好.. 加载店...",
-    "welcome_retrying": "哎呀.. 装店...",
-    "welcome_error": "哎呀！出了些问题..",
-	"information_popup": "信息"
+  "welcome_title": "歡迎來到Mini Con City",
+  "welcome_connecting": "連接到Mini Con City...",
+  "welcome_connected": "正在加載應用程序",
+  "welcome_logging_in": "正在登錄...",
+  "welcome_loading_store": "正在加載商店",
+  "welcome_retrying": "正在重新加載商店",
+  "welcome_error": "出現了少許問題，請稍後。",
+  "information_popup": "歡迎來到Mini Con City"
 }
