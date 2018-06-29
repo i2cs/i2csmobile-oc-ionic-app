@@ -2,7 +2,7 @@
     <ion-nav-buttons side="right">
         <a class="button button-positive" href="#/app/menu/shop/search"><i class="icon ion-ios-search"></i></a>
     </ion-nav-buttons>
-    <ion-content auto-hide elastic-header="example-elastic-header" delegate-handle="example-scroller">
+    <ion-content delegate-handle="example-scroller">
         <ion-refresher pulling-text="Pull to refresh" on-refresh="refreshUI()"></ion-refresher>
         <ion-slide-box id="example-elastic-header" show-pager="false" class="home-slider" does-continue="true" auto-play="true">
             <ion-slide ng-repeat="slide in data.slides">
@@ -12,17 +12,17 @@
             </ion-slide>
         </ion-slide-box>
 
-        <category-list thumbnail="true" mode="icons"></category-list>
+        <!--category-list thumbnail="true" mode="icons"></category-list-->
 
-        <ion-slide-box show-pager="false" class="home-slider" does-continue="true" auto-play="true">
+        <!--ion-slide-box show-pager="false" class="home-slider" does-continue="true" auto-play="true">
             <ion-slide ng-repeat="slide in data.offers">
                 <a ng-href="{{::slide.link}}">
                     <img preload-image ng-src="{{::slide.image}}" default-image="app/shop/images/slide.png" fallback-image="app/shop/images/slide.png" />
                 </a>
             </ion-slide>
-        </ion-slide-box>
+        </ion-slide-box-->
 
-        <ion-list class="recent-items-list">
+        <!--ion-list class="recent-items-list">
             <div class="item item-divider" i18n="shop.featured_title"></div>
             <ion-slide-box show-pager="false" does-continue="true" auto-play="true">
                 <ion-slide ng-repeat="item in data.featuredItems">
@@ -31,20 +31,35 @@
                     </ion-item>
                 </ion-slide>
             </ion-slide-box>
-        </ion-list>
+        </ion-list-->
 
-        <div class="item item-divider item-button-right">
-            <span i18n="shop.latest_title"></span>
-            <button class="button button-stable button-outline button-no-outline" ng-init="grid_mode = true" ng-click="grid_mode = !grid_mode">
-                <i class="icon" ng-class="{'ion-ios-grid-view-outline' : grid_mode, 'ion-ios-list-outline': !grid_mode}"></i>
-            </button>
+		
+        <div class="item" ng-if="data.featuredItems1.length > 0" style="text-align: center;">
+            <img src="http://miniconcity.com/imgs/index-title1.png" height="35px"/>
         </div>
-        <div class="recent-items-list" ng-class="{'row grid_mode' : grid_mode, 'list': !grid_mode}">
+		<div class="recent-items-list row grid_mode" ng-if="data.featuredItems1.length > 0">
+            <div ng-repeat="item in data.featuredItems1" class="item col-50" style="border: solid 1px #fabfcf;background: #ffe8ee;">
+                <item-template item="item" mode="2"></item-template>
+            </div>
+        </div>
+		
+		
+		<div class="item" ng-if="data.featuredItems2.length > 0" style="text-align: center;">
+            <img src="http://miniconcity.com/imgs/index-title2.png" height="35px"/>
+        </div>
+		<div class="recent-items-list row grid_mode" ng-if="data.featuredItems2.length > 0">
+            <div ng-repeat="item in data.featuredItems2" class="item col-50" style="border: solid 1px #fabfcf;background: #ffe8ee;">
+                <item-template item="item" mode="2"></item-template>
+            </div>
+        </div>
+		
+		
+        <!--div class="recent-items-list" ng-class="{'row grid_mode' : grid_mode, 'list': !grid_mode}">
             <div class="item" ng-repeat="item in data.latestItems" ng-class="{'col-50' : grid_mode}" style="border: solid 1px #fabfcf;background: #ffe8ee;">
                 <item-template item="item" mode="2"></item-template>
             </div>
 
             <ion-infinite-scroll ng-if="!endOfRecentItems" on-infinite="loadNextRecentPage()" distance="5%"></ion-infinite-scroll>
-        </div>
+        </div-->
     </ion-content>
 </ion-view>

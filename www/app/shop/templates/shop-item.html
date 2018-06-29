@@ -22,12 +22,12 @@
                                 <p>{{item.text_stock}} {{item.stock}}</p>
                                 <p ng-if="reward && item.reward" i18n="shop.reward_points" data-reward="{{item.reward}}"></p>
                                 <p>
-                                    <span ng-if="item.special">{{item.special}}</span>
+                                    <!--span ng-if="item.special">{{item.special}}</span-->
                                     <span ng-class="{'has-special' : item.special}">{{item.price}}</span>
                                 </p>
-                                <p ng-if="item.special != item.mobile_special && item.mobile_special" ng-click="showRegisterPopup()">
+                                <!--p ng-if="item.special != item.mobile_special && item.mobile_special" ng-click="showRegisterPopup()">
                                     <i class="icon ion-iphone mobile-icon-fix"></i> <span i18n="shop.special_price"></span> <span class="mobile-price color-animate">{{::item.mobile_special}}</span>
-                                </p>
+                                </p-->
                             </div>
                         </div>
                         <div class="list white-background">
@@ -128,9 +128,9 @@
                                         <div class="col-60 related-items-details">
                                             <div ng-bind-html="item.name"></div>
                                             <p>
-                                                <span ng-if="item.special">{{item.special}}</span>
+                                                <!--span ng-if="item.special">{{item.special}}</span-->
                                                 <span ng-class="{'has-special' : item.special}">{{item.price}}</span>
-                                                <span class="badge badge-assertive" ng-if="item.off" i18n="shop.item_page_off" data-percent="{{item.off}}"></span>
+                                                <!--span class="badge badge-assertive" ng-if="item.off" i18n="shop.item_page_off" data-percent="{{item.off}}"></span-->
                                             </p>
                                         </div>
                                     </a>

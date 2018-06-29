@@ -507,13 +507,15 @@ angular
         this.GetFeaturedProducts = function () {
 
             return dataService.apiSecuredPost('/featured').then(function (data) {
-                for (var i in data.products) {
-                    if (data.products[i].special_clear) {
-                        var s = parseInt(data.products[i].special_clear);
-                        var p = parseInt(data.products[i].price_clear);
-                        data.products[i].off = Math.ceil((p - s) / p * 100);
-                    }
-                }
+                for (var m in data.modules) {				
+					for (var i in data.modules[m].products) {
+						if (data.modules[m][i].special_clear) {
+							var s = parseInt(data.modules[m][i].special_clear);
+							var p = parseInt(data.modules[m][i].price_clear);
+							data.modules[m].products[i].off = Math.ceil((p - s) / p * 100);
+						}
+					}
+				}
 
                 return data;
             });

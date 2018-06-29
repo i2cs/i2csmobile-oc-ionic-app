@@ -32,7 +32,7 @@ angular
         $scope.refreshUI = function () {
             $scope.latestPage = 1;
             $scope.endOfRLatestItems = false;
-            $scope.loadLatest(true);
+            //$scope.loadLatest(true);
             $scope.loadFeatured();
             //$scope.loadCategories();
             $scope.loadBanners();
@@ -48,7 +48,8 @@ angular
 
         $scope.loadFeatured = function () {
             ShopService.GetFeaturedProducts().then(function (data) {
-                $scope.data.featuredItems = data.products;
+                $scope.data.featuredItems1 = data.modules[0] || [];
+				$scope.data.featuredItems2 = data.modules[1] || [];
                 $ionicSlideBoxDelegate.update();
             });
         }
@@ -94,7 +95,7 @@ angular
 
         $scope.loadNextRecentPage = function () {
             if (!$scope.endOfRLatestItems) {
-                $scope.loadLatest();
+                //$scope.loadLatest();
             } else {
                 $scope.$broadcast('scroll.infiniteScrollComplete');
             }
@@ -110,7 +111,7 @@ angular
 
         $scope.loadFeatured();
         $scope.loadBanners();
-        $scope.loadLatest();
+        //$scope.loadLatest();
     });
 
 

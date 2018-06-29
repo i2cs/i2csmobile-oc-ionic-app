@@ -2,9 +2,11 @@
     <filter-box placeholder="{{'shop.search_label' | i18n}}" filtertext="search" ng-model-options="{debounce: 1000}" change="onSearchKeyDown"></filter-box>
 
     <ion-list class="recent-items-list">
-        <ion-item ng-repeat="item in items">
-            <item-template item="item"></item-template>
+		<div class=" row grid_mode" style="background:none;"> 
+        <ion-item ng-repeat="item in items" class="item col-50" style="border: solid 1px #fabfcf;background: #ffe8ee;">
+            <item-template item="item" mode="2"></item-template>
         </ion-item>
+		</div>
 
         <div ng-if="!noSearchword && !loadingItems && items.length == 0" class="large-icon-message">
             <span class="large-app-icon large-app-icon-red">
