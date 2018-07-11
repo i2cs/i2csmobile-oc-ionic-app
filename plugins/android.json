@@ -8,60 +8,60 @@
     },
     "installed_plugins": {
         "cordova-plugin-app-event": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.glamourbeauty"
         },
         "cordova-plugin-app-version": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.glamourbeauty"
         },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.glamourbeauty"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.glamourbeauty"
         },
         "cordova-plugin-device-orientation": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.glamourbeauty"
         },
         "cordova-plugin-geolocation": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.glamourbeauty"
         },
         "cordova-plugin-google-analytics": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.glamourbeauty"
         },
         "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.glamourbeauty"
         },
         "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.glamourbeauty"
         },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.glamourbeauty"
         },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.glamourbeauty"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.glamourbeauty"
         },
         "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.glamourbeauty"
         },
         "ionic-plugin-deploy": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.glamourbeauty"
         },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.glamourbeauty"
         },
         "onesignal-cordova-plugin": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.glamourbeauty"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-compat": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.glamourbeauty"
         },
         "cordova-plugin-intercom": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
+            "PACKAGE_NAME": "com.i2cs.mobile.glamourbeauty"
         }
     }
 }
