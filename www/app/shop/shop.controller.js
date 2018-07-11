@@ -22,14 +22,15 @@ angular
         var initialCall = true;
         $scope.activeSlide = 0;
         // sync form input to localstorage
-        $localStorage.home = /*$localStorage.home ||*/ {};
-        $scope.data = $localStorage.home;
+        //$localStorage.home = /*$localStorage.home ||*/ {};
+        $scope.data = {};//$localStorage.home;
         $scope.latestPage = 1;
 
         if (!$scope.data.slides)
             $scope.data.slides = [{ image: "app/shop/images/slide.png" }];
 
         $scope.refreshUI = function () {
+			if($scope.loadingLatest) return;
             $scope.latestPage = 1;
             $scope.endOfRLatestItems = false;
             $scope.loadLatest(true);
