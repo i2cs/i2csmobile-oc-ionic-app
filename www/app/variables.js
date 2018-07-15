@@ -20,7 +20,7 @@ angular.module('starter')
     .constant('INTERCOM_INTEGRATION', false) // please check www/app/common/services/intercom.service.js
     .constant('ONESIGNAL_APP_ID', "") // get OneSignal app id from http://onesignal.com
     .constant('GCM_SENDER_ID', "")
-    .constant('MENU_LAYOUT', "tabs")
+    .constant('MENU_LAYOUT', "side")
 
     // if demo mode is set to true, some dynamic configurations 
     // used only for demo app will appear in info section

@@ -31,9 +31,6 @@
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.i2cs.mobile.demo"
         },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.i2cs.mobile.demo"
-        },
         "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.i2cs.mobile.demo"
         },
@@ -55,6 +52,9 @@
         "cordova-plugin-geolocation": {
             "GEOLOCATION_USAGE_DESCRIPTION": " ",
             "PACKAGE_NAME": "com.i2cs.mobile.demo"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.i2cs.minicon"
         }
     },
     "dependent_plugins": {
