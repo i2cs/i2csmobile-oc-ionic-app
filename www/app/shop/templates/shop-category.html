@@ -3,7 +3,7 @@
         <a class="button button-outline button-positive" href="#/app/menu/shop/search"><i
                 class="icon ion-ios-search"></i></a>
     </ion-nav-buttons>
-    <ion-content auto-hide delegate-handle="category-scroller">
+    <ion-content>
         <ion-refresher pulling-text="Pull to refresh" on-refresh="refreshUI()"></ion-refresher>
 
         <div class="item item-divider">
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <ion-item ng-if="items.length < 1">{{::text_empty}}</ion-item>
-            <ion-infinite-scroll ng-if="!endOfItems" on-infinite="loadNextPage()" distance="1%"></ion-infinite-scroll>
+            <ion-infinite-scroll ng-if="!endOfItems" on-infinite="loadNextPage()" distance="5%"></ion-infinite-scroll>
         </div>
 
     </ion-content>

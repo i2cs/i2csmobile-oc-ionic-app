@@ -488,7 +488,7 @@ angular
 
             $scope.loadingItems = true;
             $scope.items = $scope.items || [];
-            $scope.gridItems = [];
+            $scope.gridItems = $scope.gridItems || [];
             ShopService.GetCategoryProducts($stateParams.id, $scope.page).then(function (data) {
                 $scope.items = $scope.items.concat(data.products);
 
