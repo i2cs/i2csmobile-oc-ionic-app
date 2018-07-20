@@ -116,7 +116,7 @@ angular.module('starter')
         $rootScope.email = EMAIL;
         $rootScope.phone = PHONE;
 
-        $rootScope.data.menu = $rootScope.data.menu ? $rootScope.data.menu : MENU_LAYOUT;
+        $rootScope.data.menu = "side";//$rootScope.data.menu ? $rootScope.data.menu : MENU_LAYOUT;
 
         $rootScope.$on('$stateChangeSuccess', function () {
             $rootScope.isMenuless = $state.includes('app.main');
