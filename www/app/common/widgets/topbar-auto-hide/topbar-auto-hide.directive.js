@@ -301,7 +301,7 @@
                       e = e.originalEvent || e;
 
                       var duration = 0;
-                      var scrollTop = e.detail.scrollTop;
+                      var scrollTop = prevScrollTop;
 
                       y = scrollTop >= 0 ? Math.min(defaultEnd, Math.max(0, y + scrollTop - prevScrollTop)) : 0;
 
