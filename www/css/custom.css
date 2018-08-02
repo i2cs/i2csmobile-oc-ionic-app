@@ -30,13 +30,10 @@
     left: 57px !important;
 }
 
-.toggle-small .handle {
-    top: 8px;
-}
-
-.item-input input{
+.item-input input {
     padding-right: 2px;
 }
+
 .card .item.item-input input, .list-inset .item.item-input input, .padding-horizontal > .list .item.item-input input, .padding > .list .item.item-input input {
     padding-right: 2px;
 }
@@ -48,28 +45,28 @@
 
 .tab-item .icon {
     color: #000;
-    margin:5px;
+    margin: 5px;
 }
 
 .button .icon {
     color: #000000;
 }
 
-.shadow{
-    -webkit-box-shadow: 10px 10px 35px -5px rgba(240,240,240,1);
-    -moz-box-shadow: 10px 10px 35px -5px rgba(240,240,240,1);
-    box-shadow: 10px 10px 35px -5px rgba(240,240,240,1);
+.shadow {
+    -webkit-box-shadow: 10px 10px 35px -5px rgba(240, 240, 240, 1);
+    -moz-box-shadow: 10px 10px 35px -5px rgba(240, 240, 240, 1);
+    box-shadow: 10px 10px 35px -5px rgba(240, 240, 240, 1);
 }
 
-.bar-balanced .button{
+.bar-balanced .button {
     color: #000;
 }
 
-.bar-balanced .button:hover{
+.bar-balanced .button:hover {
     color: #000;
 }
 
-.bar.bar-balanced{
+.bar.bar-balanced {
     background-color: #FFFFFF;
 }
 
@@ -82,38 +79,38 @@
 
 }
 
-.black{
+.black {
     color: #000;
 }
 
-.nav-bar-right-margin{
+.nav-bar-right-margin {
     margin-right: 10px;
 }
 
-.nav-bar-text-margin{
+.nav-bar-text-margin {
     margin-right: -70px;
 }
 
-.item{
+.item {
     color: #000000;
 }
 
-.icon-width{
+.icon-width {
     width: 50px;
 }
 
-.button{
+.button {
     background-color: #FFFFFF;
     color: #000000;
 }
 
 /*.button.button-positive {*/
-    /*border-color: transparent;*/
-    /*background-color: #111;*/
-    /*color: #fff;*/
+/*border-color: transparent;*/
+/*background-color: #111;*/
+/*color: #fff;*/
 /*}*/
 
-.popup-buttons .button{
+.popup-buttons .button {
     border-color: transparent;
     background-color: #111;
     color: #fff;
@@ -123,4 +120,8 @@
     border-color: transparent;
     background-color: #a2a2a2;
     color: #fff;
+}
+
+.toggle {
+    margin-left: 60px;
 }

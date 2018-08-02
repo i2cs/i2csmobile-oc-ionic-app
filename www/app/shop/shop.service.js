@@ -95,7 +95,7 @@ angular
          * @returns {promise} Returns a promise of the API call.
          */
         this.GetBanners = function () {
-            return dataService.apiSecuredPost('/design/banners').then(function (data) {
+            return dataService.apiSecuredPost('/design/banners',{banner_height: 500 ,banner_width: 800}).then(function (data) {
                 if (data.main_banners || data.offer_banner) {
                     return data;
                 } else {

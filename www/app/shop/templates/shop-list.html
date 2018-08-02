@@ -7,7 +7,7 @@
         <ion-slide-box id="example-elastic-header" show-pager="false" class="home-slider" does-continue="true" auto-play="true">
             <ion-slide ng-repeat="slide in data.slides">
                 <a ng-href="{{::slide.link}}">
-                    <img preload-image ng-src="{{::slide.image}}" default-image="app/shop/images/slide.png" fallback-image="app/shop/images/slide.png" />
+                    <img preload-image ng-src="{{::slide.image}}" default-image="app/shop/images/slide.png" fallback-image="app/shop/images/slide.png"  style="height: 100%"/>
                 </a>
             </ion-slide>
         </ion-slide-box>

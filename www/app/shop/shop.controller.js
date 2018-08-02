@@ -74,7 +74,7 @@ angular
                     $scope.data.latestItems = data.products;
                     $scope.latestPage = 1;
                 } else {
-                    if ($scope.latestPage == 1) {
+                    if ($scope.latestPage === 1) {
                         $scope.data.latestItems = [];
                     }
 
