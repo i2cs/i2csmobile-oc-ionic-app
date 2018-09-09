@@ -125,3 +125,13 @@
 .toggle {
     margin-left: 60px;
 }
+
+body[dir=rtl] .bar-header .title+.button:last-child, body[dir=rtl] .bar-header .title+.buttons {
+    /* left: 5px; */
+    /* right: unset; */
+}
+
+.tabs-positive>.tabs .tab-item .badge, .tabs.tabs-positive .tab-item .badge {
+    background-color: #fff;
+    color: #000;
+}

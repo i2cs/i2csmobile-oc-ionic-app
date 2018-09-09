@@ -107,16 +107,12 @@
     <script src="app/auth/auth.config.js"></script>
     <script src="app/auth/auth.controller.js"></script>
     <script src="app/auth/auth.service.js"></script>
+    <script src="https://www.promisejs.org/polyfills/promise-7.0.4.min.js"></script>
 </head>
 <body ng-app="starter" dir="{{lang_dir}}">
 <ion-side-menus>
-    <ion-side-menu side="right">
-        <!--<ion-header-bar>-->
-            <!--<div id="title">-->
-                <!--&lt;!&ndash;<h1 class="title">Civinfo</h1>&ndash;&gt;-->
-                <!--&lt;!&ndash;<img src="img/info-header.png" id="info-elastic-header" width="100%"/>&ndash;&gt;-->
-            <!--</div>-->
-        <!--</ion-header-bar>-->
+    <ion-side-menu side="right" style="float: right">
+
         <ion-content>
             <ion-list>
                 <a class="button button-positive ion-item menu-close right" ng-click="openLoginModal()" style="margin-top: 10px; width: 100%"><label class="black nav-bar-text-margin">ملف تعريفي للمستخدم</label><i class="icon ion-ios-person-outline right icon-width"></i></a>
@@ -137,12 +133,10 @@
     </ion-side-menu>
     <ion-side-menu-content drag-content="true">
         <ion-nav-bar class="bar-balanced">
-            <ion-nav-buttons side="right">
-                <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+
+            <ion-nav-buttons side="right" style="position: absolute;right: 5px; float: right">
+                <button menu-toggle="right" class="button button-icon icon ion-navicon" style="float: left"></button>
             </ion-nav-buttons>
-            <ion-nav-back-button class="button-clear">
-                <i class="ion-arrow-right-c"></i> Back
-            </ion-nav-back-button>
         </ion-nav-bar>
         <ion-nav-view></ion-nav-view>
     </ion-side-menu-content>

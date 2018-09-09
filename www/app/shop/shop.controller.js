@@ -1,18 +1,18 @@
 'use strict';
 
 /**
-* @ngdoc controller
-* @name shop.module.controller:ShopHomeCtrl
-* @requires $scope
-* @requires $localStorage
-* @requires $rootScope
-* @requires $stateParams
-* @requires $ionicSlideBoxDelegate
-* @requires ShopService
-* @description
-* Home page of the Shop module. This controller contains methods to show banners and product catalog in
-* the home page.
-*/
+ * @ngdoc controller
+ * @name shop.module.controller:ShopHomeCtrl
+ * @requires $scope
+ * @requires $localStorage
+ * @requires $rootScope
+ * @requires $stateParams
+ * @requires $ionicSlideBoxDelegate
+ * @requires ShopService
+ * @description
+ * Home page of the Shop module. This controller contains methods to show banners and product catalog in
+ * the home page.
+ */
 angular
     .module('shop.module')
     .controller('ShopHomeCtrl', function ($scope, $localStorage, $rootScope, $stateParams, $ionicSlideBoxDelegate, ShopService) {
@@ -27,10 +27,10 @@ angular
         $scope.latestPage = 1;
 
         if (!$scope.data.slides)
-            $scope.data.slides = [{ image: "app/shop/images/slide.png" }];
+            $scope.data.slides = [{image: "app/shop/images/slide.png"}];
 
         $scope.refreshUI = function () {
-			if($scope.loadingLatest) return;
+            if ($scope.loadingLatest) return;
             $scope.latestPage = 1;
             $scope.endOfRLatestItems = false;
             $scope.loadLatest(true);
@@ -124,26 +124,26 @@ angular
 
 
 /**
-* @ngdoc controller
-* @name shop.module.controller:ShopItemCtrl
-* @requires $scope
-* @requires $timeout
-* @requires $localStorage
-* @requires $rootScope
-* @requires $state
-* @requires $stateParams
-* @requires $ionicPopup
-* @requires $ionicLoading
-* @requires $ionicTabsDelegate
-* @requires $ionicSlideBoxDelegate
-* @requires locale
-* @requires ShopService
-* @requires CartService
-* @requires WEBSITE
-* @description
-* Shows details of a selected item. Renders all attributes and options in the view.
-* Contains a `Buy` button which interacts with the API and add to product cart.
-*/
+ * @ngdoc controller
+ * @name shop.module.controller:ShopItemCtrl
+ * @requires $scope
+ * @requires $timeout
+ * @requires $localStorage
+ * @requires $rootScope
+ * @requires $state
+ * @requires $stateParams
+ * @requires $ionicPopup
+ * @requires $ionicLoading
+ * @requires $ionicTabsDelegate
+ * @requires $ionicSlideBoxDelegate
+ * @requires locale
+ * @requires ShopService
+ * @requires CartService
+ * @requires WEBSITE
+ * @description
+ * Shows details of a selected item. Renders all attributes and options in the view.
+ * Contains a `Buy` button which interacts with the API and add to product cart.
+ */
 angular
     .module('shop.module')
     .controller('ShopItemCtrl', function ($scope, $timeout, $localStorage, $rootScope, $state, $stateParams, $ionicPopup, $ionicLoading, $ionicTabsDelegate, $ionicSlideBoxDelegate, locale, ShopService, CartService, WEBSITE, REWARDS_ENABLED) {
@@ -270,10 +270,10 @@ angular
                     templateUrl: "app/shop/templates/popups/missing-props.html",
                     scope: $scope,
                     buttons: [
-                      {
-                          text: 'OK',
-                          type: 'button-positive'
-                      }
+                        {
+                            text: 'OK',
+                            type: 'button-positive'
+                        }
                     ]
                 });
             } else {
@@ -283,7 +283,7 @@ angular
                     $rootScope.cartItemCount = $rootScope.cartItemCount || 0;
                     $rootScope.cartItemCount += parseInt($scope.cart.quantity);
                     $ionicTabsDelegate.select(2);
-                    $state.go('app.menu.cart.home', {}, { reload: true });
+                    $state.go('app.menu.cart.home', {}, {reload: true});
                     $ionicLoading.hide();
                 }, function (error) {
                     alert("Error. Can't add to the cart");
@@ -299,10 +299,10 @@ angular
                     templateUrl: "app/shop/templates/popups/missing-props.html",
                     scope: $scope,
                     buttons: [
-                      {
-                          text: 'OK',
-                          type: 'button-positive'
-                      }
+                        {
+                            text: 'OK',
+                            type: 'button-positive'
+                        }
                     ]
                 });
             } else {
@@ -313,15 +313,15 @@ angular
                     cssClass: 'desc-popup',
                     template: locale.getString('shop.added_to_cart_desc'),
                     buttons: [
-                      { text: locale.getString('shop.button_shop_more') },
-                      {
-                          text: locale.getString('shop.button_go_to_cart'),
-                          type: 'button-positive',
-                          onTap: function (e) {
-                              $ionicTabsDelegate.select(2);
-                              $state.go('app.menu.cart.home', {}, { reload: true });
-                          }
-                      }
+                        {text: locale.getString('shop.button_shop_more')},
+                        {
+                            text: locale.getString('shop.button_go_to_cart'),
+                            type: 'button-positive',
+                            onTap: function (e) {
+                                $ionicTabsDelegate.select(2);
+                                $state.go('app.menu.cart.home', {}, {reload: true});
+                            }
+                        }
                     ]
                 });
 
@@ -448,16 +448,16 @@ angular
 
 
 /**
-* @ngdoc controller
-* @name shop.module.controller:ShopCategoryCtrl
-* @requires $scope
-* @requires $rootScope
-* @requires $stateParams
-* @requires $state
-* @requires ShopService
-* @description
-* Lists products of a selected category.
-*/
+ * @ngdoc controller
+ * @name shop.module.controller:ShopCategoryCtrl
+ * @requires $scope
+ * @requires $rootScope
+ * @requires $stateParams
+ * @requires $state
+ * @requires ShopService
+ * @description
+ * Lists products of a selected category.
+ */
 angular
     .module('shop.module')
     .controller('ShopCategoryCtrl', function ($scope, $rootScope, $stateParams, $state, ShopService) {
@@ -489,31 +489,56 @@ angular
             $scope.loadingItems = true;
             $scope.items = $scope.items || [];
             $scope.gridItems = $scope.gridItems || [];
-            ShopService.GetCategoryProducts($stateParams.id, $scope.page).then(function (data) {
-                $scope.items = $scope.items.concat(data.products);
 
-                for (var i = 0; i < $scope.items.length; i = i + 2) {
-                    var rightItem = $scope.items[i];
-                    var leftItem = $scope.items[i + 1];
-                    var gridItem = {};
-                    gridItem.rightItem = rightItem;
-                    gridItem.leftItem = leftItem;
-                    $scope.gridItems[i / 2] = gridItem;
-                }
+            $scope.tabbedGrid = [];
 
-                $scope.category_name = data.heading_title;
-                $scope.text_empty = data.text_empty;
-                $scope.page++;
-                if (data && data.products.length < 1)
-                    $scope.endOfItems = true;
-                $scope.loadingItems = false;
-                $scope.$broadcast('scroll.infiniteScrollComplete');
-                $scope.$broadcast('scroll.refreshComplete');
-            }, function (data) {
-                $scope.loadingItems = false;
-                $scope.$broadcast('scroll.infiniteScrollComplete');
-                $scope.$broadcast('scroll.refreshComplete');
-            });
+            ShopService.GetCategories($stateParams.id).then(function (data) {
+                getSubCategories(data);
+            }).then();
+
+        };
+
+        async function getSubCategories(data) {
+            console.log(data.categories);
+            for (var j = 0; j < data.categories.length; j++) {
+                var subCategory = data.categories[j];
+                var tabbedGirdItem = {};
+                tabbedGirdItem.name = subCategory.name;
+                tabbedGirdItem.id = subCategory.category_id;
+                var productGrid = [];
+
+                await ShopService.GetCategoryProducts(subCategory.category_id, $scope.page).then(function (data) {
+                    console.log('products for category id ', subCategory.category_id, ' TTT ', data.products);
+                    $scope.items = $scope.items.concat(data.products);
+                    for (var i = 0; i < $scope.items.length; i = i + 2) {
+                        var rightItem = $scope.items[i];
+                        var leftItem = $scope.items[i + 1];
+                        var gridItem = {};
+                        gridItem.rightItem = rightItem;
+                        gridItem.leftItem = leftItem;
+                        $scope.gridItems[i / 2] = gridItem;
+                        productGrid[i / 2] = gridItem;
+                    }
+
+                    $scope.category_name = data.heading_title;
+                    $scope.text_empty = data.text_empty;
+                    $scope.page++;
+                    if (data && data.products.length < 1)
+                        $scope.endOfItems = true;
+                    $scope.loadingItems = false;
+                    $scope.$broadcast('scroll.infiniteScrollComplete');
+                    $scope.$broadcast('scroll.refreshComplete');
+                }, function (data) {
+                    $scope.loadingItems = false;
+                    $scope.$broadcast('scroll.infiniteScrollComplete');
+                    $scope.$broadcast('scroll.refreshComplete');
+                });
+
+                tabbedGirdItem.grid = productGrid;
+                $scope.tabbedGrid.push(tabbedGirdItem);
+            }
+            console.log('tabbed grid');
+            console.log($scope.tabbedGrid);
         }
 
         $scope.loadNextPage = function () {

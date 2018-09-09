@@ -143,7 +143,7 @@ angular
          * @returns {promise} Returns a promise of the API call.
          */
         this.GetCategories = function (id) {
-            return dataService.apiSecuredPost('/category/all', {path :id, per_page : 100});
+            return dataService.apiSecuredPost('/category/all', {path :id, per_page : 24});
         }
 
         /**
