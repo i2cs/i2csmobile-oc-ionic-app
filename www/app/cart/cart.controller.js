@@ -301,8 +301,18 @@ angular
                 $scope.loadPaymentMethods();
                 $scope.loadCart(true);
             }, function (data) {
-                alert("Error while saving shipping method");
+                //alert("Error while saving shipping method");
                 $ionicLoading.hide();
+				
+				CartService.SaveShippingMethod($rootScope.paymentAndShipping).then(function (data1) {
+					$rootScope.paymentAndShipping.payment_method = null;
+					$ionicLoading.hide();
+					$scope.loadPaymentMethods();
+					$scope.loadCart(true);
+				}, function (data1) {
+					//alert("Error while saving shipping method");
+					$ionicLoading.hide();
+				});
             });
         }
 
@@ -314,8 +324,15 @@ angular
             CartService.SavePaymentMethod($rootScope.paymentAndShipping).then(function (data) {
                 $ionicLoading.hide();
             }, function (data) {
-                alert("Error while saving payment method");
+                //alert("Error while saving payment method");
                 $ionicLoading.hide();
+				
+				CartService.SavePaymentMethod($rootScope.paymentAndShipping).then(function (data1) {
+					$ionicLoading.hide();
+				}, function (data1) {
+					//alert("Error while saving payment method");
+					$ionicLoading.hide();
+				});
             });
         }
 

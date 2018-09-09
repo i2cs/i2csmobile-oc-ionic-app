@@ -86,6 +86,10 @@ body[dir=rtl] > ion-nav-view > .pane {
     right: initial;
 }
 
+*[dir=rtl] .item-floating-label .input-label {
+    padding: 5px 20px 0;
+}
+
 .front-spinner svg {
     stroke: #FFF;
     fill: #FFF;

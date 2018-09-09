@@ -18,10 +18,10 @@
 */
 angular.module('starter')
     .controller('WelcomeCtrl', function ($scope, $rootScope, $timeout, $state, $ionicModal, $ionicPlatform, $localStorage, locale, i18nService, dataService, appService, STATUSBAR_COLOR) {
-        $localStorage.lang = $localStorage.lang || 'en-US';
+        $localStorage.lang = $localStorage.lang || 'ar-EG';
 
         $timeout(function () {
-            var lang = $localStorage.lang || 'en-US';
+            var lang = $localStorage.lang || 'ar-EG';
             i18nService.SetLanguage(lang);
         }, 0);
 
@@ -139,7 +139,7 @@ angular.module('starter')
 
             if (!$rootScope.noLoginSignupPopup && !$rootScope.userLoggedIn() && !$rootScope.welcomeModalActive) {
                 $rootScope.noLoginSignupPopup = true;
-                $rootScope.showRegisterPopup();
+                //$rootScope.showRegisterPopup();
             }
         }, 15000);
 
@@ -189,19 +189,7 @@ angular.module('starter')
         $rootScope.welcomeModalActive = false;
 
         $rootScope.openWelcomeModal = function () {
-            if (!$rootScope.welcomeModal) {
-                $ionicModal.fromTemplateUrl('templates/welcome-modal.html', {
-                    scope: $scope,
-                    animation: 'slide-in-up'
-                }).then(function (modal) {
-                    $rootScope.welcomeModal = modal;
-                    $rootScope.welcomeModal.show();
-                    $rootScope.welcomeModalActive = true;
-                });
-            } else {
-                $rootScope.welcomeModal.show();
-                $rootScope.welcomeModalActive = true;
-            }
+            
         }
 
         $rootScope.closeWelcomeModal = function () {
@@ -212,7 +200,7 @@ angular.module('starter')
         if (!$rootScope.data.notInitialLoad) {
             $rootScope.welcome = WELCOME_SLIDES || [];
             $rootScope.data.notInitialLoad = true;
-            $rootScope.openWelcomeModal();
+            //$rootScope.openWelcomeModal();
         }
 
         CartService.GetAddress().then(function (data) {
