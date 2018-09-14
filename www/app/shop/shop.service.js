@@ -211,7 +211,7 @@ angular
          */
         this.GetCategoryProducts = function (id, page) {
 
-            var limit = 10;
+            var limit = 50;
 
             return dataService.apiSecuredPost('/category', { path: id, page: page, limit: limit }).then(function (data) {
                 for (var i in data.products) {

@@ -460,10 +460,13 @@ angular
  */
 angular
     .module('shop.module')
-    .controller('ShopCategoryCtrl', function ($scope, $rootScope, $stateParams, $state, ShopService) {
+    .controller('ShopCategoryCtrl', function ($scope, $rootScope, $stateParams, $state, $ionicLoading, ShopService) {
         var vm = this;
 
         $scope.id = $stateParams.id;
+		$scope.selectedCategory = 0;
+		$scope.pages = {};
+		$scope.endOfPages = {};
 
         if (!$stateParams.id) {
             $state.go('app.menu.shop.home');
@@ -482,18 +485,17 @@ angular
         }
 
         $scope.loadItems = function () {
-            if ($scope.loadingItems) {
-                return;
-            }
-
-            $scope.loadingItems = true;
             $scope.items = $scope.items || [];
             $scope.gridItems = $scope.gridItems || [];
 
             $scope.tabbedGrid = [];
-
+			$ionicLoading.show();
             ShopService.GetCategories($stateParams.id).then(function (data) {
-                getSubCategories(data);
+				$ionicLoading.hide();
+				if(data && data.categories && data.categories[0] && data.categories[0].category_id) {
+					$scope.selectedCategory = data.categories[0].category_id;
+				}
+				getSubCategories(data);
             }).then();
 
         };
@@ -507,48 +509,75 @@ angular
                 tabbedGirdItem.id = subCategory.category_id;
                 var productGrid = [];
 
-                await ShopService.GetCategoryProducts(subCategory.category_id, $scope.page).then(function (data) {
-                    console.log('products for category id ', subCategory.category_id, ' TTT ', data.products);
-                    $scope.items = $scope.items.concat(data.products);
-                    for (var i = 0; i < $scope.items.length; i = i + 2) {
-                        var rightItem = $scope.items[i];
-                        var leftItem = $scope.items[i + 1];
-                        var gridItem = {};
-                        gridItem.rightItem = rightItem;
-                        gridItem.leftItem = leftItem;
-                        $scope.gridItems[i / 2] = gridItem;
-                        productGrid[i / 2] = gridItem;
-                    }
-
-                    $scope.category_name = data.heading_title;
-                    $scope.text_empty = data.text_empty;
-                    $scope.page++;
-                    if (data && data.products.length < 1)
-                        $scope.endOfItems = true;
-                    $scope.loadingItems = false;
-                    $scope.$broadcast('scroll.infiniteScrollComplete');
-                    $scope.$broadcast('scroll.refreshComplete');
-                }, function (data) {
-                    $scope.loadingItems = false;
-                    $scope.$broadcast('scroll.infiniteScrollComplete');
-                    $scope.$broadcast('scroll.refreshComplete');
-                });
-
+				$scope.pages[subCategory.category_id] = 1;
+				$scope.endOfPages[subCategory.category_id] = false;
                 tabbedGirdItem.grid = productGrid;
                 $scope.tabbedGrid.push(tabbedGirdItem);
+				
+				if(j == 0){
+					$scope.loadSubItemsOnUI(subCategory.category_id);
+				}
             }
             console.log('tabbed grid');
             console.log($scope.tabbedGrid);
         }
 
+		$scope.loadSubItemsOnUI = function(id){
+			var selected = $scope.tabbedGrid.filter(a => a.id == id)[0];
+			if(selected){
+				$scope.selectedCategory = selected.id;
+				if(selected.grid.length == 0)
+					$scope.loadNextPage();
+				else
+					$scope.items = selected.grid;
+				console.log('Sub category selected', selected.id, $scope.items)
+			}
+		}
+		
         $scope.loadNextPage = function () {
-            if (!$scope.endOfItems) {
-                $scope.loadItems();
+			if($scope.selectedCategory == 0){
+				$scope.$broadcast('scroll.infiniteScrollComplete');
+				return;
+			}
+			
+			$ionicLoading.show();
+			console.log('next', !$scope.endOfPages[$scope.selectedCategory], !$scope.loadingItems)
+            if (!$scope.endOfPages[$scope.selectedCategory] && !$scope.loadingItems) {
+                $scope.loadingItems = true;
+				ShopService.GetCategoryProducts($scope.selectedCategory, $scope.pages[$scope.selectedCategory]++).then(function (data) {
+					var changingItem = $scope.tabbedGrid.filter(a => a.id == $scope.selectedCategory)[0];
+					if(changingItem){
+						var productGrid = changingItem.grid;
+						var currentLength = changingItem.grid.length % 2 == 0 ? changingItem.grid.length : changingItem.grid.length + 1;
+						for (var i = 0; i < data.products.length; i = i + 2) {
+							var rightItem = data.products[i];
+							var leftItem = data.products[i + 1];
+							var gridItem = {};
+							gridItem.rightItem = rightItem;
+							gridItem.leftItem = leftItem;
+							productGrid.push(gridItem);
+						}
+						
+						if (data && data.products.length < 1)
+							$scope.endOfPages[$scope.selectedCategory] = true;
+						
+						$scope.loadSubItemsOnUI($scope.selectedCategory);
+					}
+					
+					$ionicLoading.hide();
+					$scope.loadingItems = false;
+					$scope.$broadcast('scroll.infiniteScrollComplete');
+				}, function (data) {
+					$ionicLoading.hide();
+                    $scope.loadingItems = false;
+                    $scope.$broadcast('scroll.infiniteScrollComplete');
+                });
             } else {
                 $scope.$broadcast('scroll.infiniteScrollComplete');
-                $scope.$broadcast('scroll.refreshComplete');
             }
         }
+		
+		$scope.loadItems();
     });
 
 
