@@ -3,6 +3,11 @@
     direction: ltr !important;
 }
 
+body[dir=rtl] .item-radio .radio-icon {
+    left: 0;
+	right: unset;
+}
+
 body[dir=rtl] .slider > * {
     direction: rtl !important;
 }

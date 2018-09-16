@@ -304,15 +304,19 @@ angular
                 //alert("Error while saving shipping method");
                 $ionicLoading.hide();
 				
-				CartService.SaveShippingMethod($rootScope.paymentAndShipping).then(function (data1) {
-					$rootScope.paymentAndShipping.payment_method = null;
-					$ionicLoading.hide();
-					$scope.loadPaymentMethods();
-					$scope.loadCart(true);
-				}, function (data1) {
-					//alert("Error while saving shipping method");
-					$ionicLoading.hide();
+				CartService.GetShippingMethods().then(function (data2) {
+					CartService.SaveShippingMethod($rootScope.paymentAndShipping).then(function (data1) {
+						$rootScope.paymentAndShipping.payment_method = null;
+						$ionicLoading.hide();
+						$scope.loadPaymentMethods();
+						$scope.loadCart(true);
+					}, function (data1) {
+						//alert("Error while saving shipping method");
+						$ionicLoading.hide();
+					});
 				});
+				
+				
             });
         }
 
@@ -327,10 +331,14 @@ angular
                 //alert("Error while saving payment method");
                 $ionicLoading.hide();
 				
-				CartService.SavePaymentMethod($rootScope.paymentAndShipping).then(function (data1) {
-					$ionicLoading.hide();
-				}, function (data1) {
-					//alert("Error while saving payment method");
+				CartService.GetPaymentMethods().then(function (data) {
+					CartService.SavePaymentMethod($rootScope.paymentAndShipping).then(function (data1) {
+						$ionicLoading.hide();
+					}, function (data1) {
+						//alert("Error while saving payment method");
+						$ionicLoading.hide();
+					});				
+				}, function (data) {
 					$ionicLoading.hide();
 				});
             });
