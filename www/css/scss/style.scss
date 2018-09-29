@@ -34,6 +34,11 @@ body[dir=rtl] .item-toggle .toggle {
     right: initial !important;
 }
 
+body[dir=rtl] .cart-item-total {
+	float: left;
+    text-align: left;
+}
+
 /* important note: having dir=rtl tag on body kills the app with a white screen
    so instead of maiking direction:rtl on body tag, we keep body and next two ion-nav-view
    elements ltr. the next top most element (a div having class pane) is assigned direction:ltr

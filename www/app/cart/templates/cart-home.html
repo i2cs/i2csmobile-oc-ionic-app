@@ -54,7 +54,7 @@
 							<number-spinner small="true" ng-model="cart[item.cart_id].q" minimum="{{::item.minimum}}" ng-change="quantityChanged(item.cart_id, cart[item.cart_id].q)"></number-spinner>
 						</div>
 						<div class="col col-50 price-calc" style="font-size: 13px;margin-top: 2px;">
-							x <span ng-bind-html="item.price"></span> <span class="cart-item-total" ng-bind-html="item.total"></span>
+							<div>x <span ng-bind-html="item.price"></span> <span class="cart-item-total" ng-bind-html="item.total"></span></div>
 						</div>
 					</div>
              

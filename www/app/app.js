@@ -82,17 +82,17 @@ var starter = angular.module('starter', ['ionic', 'ngCordova', 'angular-preload-
             
             // init push notification
             $timeout(function () {
-                pushInit();
+                //pushInit();
             }, 2000);
 
             // google analytics
-            analyticsService.init();
+            //analyticsService.init();
 
             // local notifications
-            notificationService.init();
+            //notificationService.init();
 
             // intercom service
-            intercomService.init();
+            //intercomService.init();
 
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
