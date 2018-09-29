@@ -139,3 +139,7 @@ body[dir=rtl] .bar-header .title+.button:last-child, body[dir=rtl] .bar-header .
 .selected {
 	background-color: #eee!important;
 }
+
+.nobackbutton a:click{
+	
+}
