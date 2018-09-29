@@ -12,7 +12,6 @@
             </div>
             <div class="item item-icon-left item-button-right" ng-if="rewards_enabled" ng-class="{'item-disabled' : !data.user || !data.user.customer_id}">
                 <i class="icon ion-ios-lightbulb-outline"></i> <span i18n="info.reward_points_label"></span>
-                <button class="button button-light button-small">{{reward_points || 0}}</button>
             </div>
             <a class="item item-icon-left" href="#/app/menu/info/orders" ng-class="{'item-disabled' : !data.user || !data.user.customer_id}">
                 <i class="icon ion-ios-pricetags-outline"></i> <span i18n="info.buttons_orders"></span>

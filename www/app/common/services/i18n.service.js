@@ -26,7 +26,7 @@ angular.module('starter')
         */
         this.SetLanguage = function (lang) {
             if (!angular.isString(lang) || lang.length < 5) {
-                lang = "en-US";
+                lang = "ar-SA";
             }
 
             $localStorage.lang = lang;
@@ -47,9 +47,16 @@ angular.module('starter')
                 }
 
                 $ionicHistory.clearCache();
+				
+				var l = "";
+				if(i[0].toLowerCase() == "en"){
+					l = "en-gb"
+				}else{
+					l = i[0].toLowerCase()
+				}
 
                 // send a request to API
-                return dataService.apiSecuredPost('/language/set', { code: i[0].toLowerCase() });
+                return dataService.apiSecuredPost('/language/set', { code: l });
             }
 
 

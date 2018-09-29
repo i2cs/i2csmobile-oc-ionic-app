@@ -23,6 +23,12 @@ angular.module('starter')
         $timeout(function () {
             var lang = $localStorage.lang || 'ar-SA';
             i18nService.SetLanguage(lang);
+			
+		
+			dataService.apiSecuredPost('/currency/currency', { code: 'SAR' }).then(function () {
+				$rootScope.$broadcast('i2csmobile.shop.refresh');
+			});
+		
         }, 0);
 
         $scope.version = "1.1.0";

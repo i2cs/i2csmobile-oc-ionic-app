@@ -20,11 +20,12 @@ angular.module('starter')
            },
            controller: ['$scope', '$rootScope', 'dataService', '$localStorage', '$ionicHistory', function ($scope, $rootScope, dataService, $localStorage, $ionicHistory) {
 				
-				$scope.currency = $localStorage.currency ? $localStorage.currency : 'USD'
+				$scope.currency = $localStorage.currency ? $localStorage.currency : 'SAR'
 				
 				$scope.$watch('currency', function (currency) {
 				    dataService.apiSecuredPost('/currency/currency', { code: currency }).then(function () {
 				        $rootScope.$broadcast('i2csmobile.shop.refresh');
+						$ionicHistory.clearCache();
 				    });
 				});
 
