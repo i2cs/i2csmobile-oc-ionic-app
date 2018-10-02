@@ -26,16 +26,16 @@
             <div class="item" ng-repeat="item in items" ng-class="{'col-50' : grid_mode}">
                 <div class="row">
 
-                    <div class="col-50 shadow" style="padding: 15px">
+                    <div class="col-50 shadow" style="padding: 15px" ng-if="item.rightItem">
                         <item-template item="item.rightItem" mode="3"></item-template>
                     </div>
-                    <div class="col-50 shadow" style="padding: 15px">
+                    <div class="col-50 shadow" style="padding: 15px" ng-if="item.leftItem">
                         <item-template item="item.leftItem" mode="3"></item-template>
                     </div>
                 </div>
             </div>
             <ion-item ng-if="items.length < 1">{{::text_empty}}</ion-item>
-			<aa href="#" ng-click="loadNextPage()" >Load more</a>
+			<center><a href="#" ng-click="loadNextPage()" >More</a></center>
             <!--ion-infinite-scroll on-infinite="loadNextPage()" distance="20%"></ion-infinite-scroll-->
         </div>
 

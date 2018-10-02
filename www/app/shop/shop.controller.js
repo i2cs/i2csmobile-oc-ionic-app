@@ -496,6 +496,7 @@ angular
 					$scope.selectedCategory = data.categories[0].category_id;
 				}
 				getSubCategories(data);
+				$ionicLoading.hide();
             }).then();
 
         };
@@ -574,6 +575,7 @@ angular
                 });
             } else {
                 $scope.$broadcast('scroll.infiniteScrollComplete');
+				$ionicLoading.hide();
             }
         }
 		

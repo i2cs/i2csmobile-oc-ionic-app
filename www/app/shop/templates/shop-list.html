@@ -22,7 +22,7 @@
             <!--</ion-slide>-->
         <!--</ion-slide-box>-->
 
-        <ion-list class="recent-items-list">
+        <!--ion-list class="recent-items-list">
             <div class="item item-divider" i18n="shop.featured_title"></div>
             <ion-slide-box show-pager="false" does-continue="true" auto-play="true">
                 <ion-slide ng-repeat="item in data.featuredItems">
@@ -31,10 +31,10 @@
                     </ion-item>
                 </ion-slide>
             </ion-slide-box>
-        </ion-list>
+        </ion-list-->
 
-        <div class="item item-divider item-button-right">
-            <span i18n="shop.latest_title"></span>
+        <div class="item item-divider item-button-right" style="padding-right: 0px;">
+            <center><span i18n="shop.latest_title"></span></center>
             <button class="button button-stable button-outline button-no-outline" ng-init="grid_mode = true" ng-click="grid_mode = !grid_mode">
                 <i class="icon" ng-class="{'ion-ios-grid-view-outline' : grid_mode, 'ion-ios-list-outline': !grid_mode}"></i>
             </button>
