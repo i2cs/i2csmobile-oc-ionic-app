@@ -25,6 +25,8 @@ angular
         //$localStorage.home = /*$localStorage.home ||*/ {};
         $scope.data = {};//$localStorage.home;
         $scope.latestPage = 1;
+		
+		$rootScope.showCart = true;
 
         if (!$scope.data.slides)
             $scope.data.slides = [{image: "app/shop/images/slide.png"}];
@@ -110,8 +112,15 @@ angular
 
         $scope.$on('$ionicView.enter', function () {
             $ionicSlideBoxDelegate.update();
+			$rootScope.showCart = true;
         });
 
+		$scope.$on('$ionicView.leave', function () {
+            $ionicSlideBoxDelegate.update();
+			$rootScope.showCart = false;
+        });
+
+		
         $scope.$on('i2csmobile.shop.refresh', function () {
             $scope.refreshUI();
         });
