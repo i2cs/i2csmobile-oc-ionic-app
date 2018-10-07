@@ -143,3 +143,57 @@ body[dir=rtl] .bar-header .title+.button:last-child, body[dir=rtl] .bar-header .
 .nobackbutton{
 background-color: #fff!important;
 }
+
+.icon.ion-ios-cart1{
+	background: url(../img/menu/shopping.png);
+	background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+}
+
+.ion-ios-cart1:before{
+	content:unset;
+}
+
+.icon.ion-ios-star1{
+	background: url(../img/menu/tag.png);
+	background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+}
+
+.ion-ios-star1:before{
+	content:unset;
+}
+
+.icon.ion-ios-pricetags1{
+	background: url(../img/menu/home.png);
+	background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+}
+
+.ion-ios-pricetags1:before{
+	content:unset;
+}
+
+.button.button-positive.button-clear{
+	color: #ccc;
+}
+
+.button.button-positive.button-outline {
+    color: #686868;
+}
+
+.bar.bar-balanced .title {
+    color: #404040;
+}
