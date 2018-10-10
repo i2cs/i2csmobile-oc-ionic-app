@@ -393,6 +393,7 @@ angular
         vm.price_changed = false;
         $scope.$watch('cart.options', function (v) {
             vm.price_changed = false;
+			if(!$scope.item) return;
             $scope.item.price_clear_temp = $scope.item.price_clear;
             $scope.item.special_clear_temp = $scope.item.special_clear;
             for (var i in v) {

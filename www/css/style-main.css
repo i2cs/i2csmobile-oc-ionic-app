@@ -9757,7 +9757,7 @@ body[dir=rtl] .item-toggle .toggle {
    elements ltr. the next top most element (a div having class pane) is assigned direction:ltr
 */
 body[dir=rtl] {
-  direction: ltr !important; }
+  /*direction: ltr !important;*/ }
 
 body[dir=rtl] > ion-nav-view > .pane {
   direction: rtl; }

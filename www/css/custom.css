@@ -134,6 +134,7 @@ body[dir=rtl] .bar-header .title+.button:last-child, body[dir=rtl] .bar-header .
 .tabs-positive>.tabs .tab-item .badge, .tabs.tabs-positive .tab-item .badge {
     background-color: #fff;
     color: #000;
+	border: 1px #505050 solid;
 }
 
 .selected {

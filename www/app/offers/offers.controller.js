@@ -27,7 +27,7 @@ angular
         }
         
         $scope.clicked = function () {
-            $ionicTabsDelegate.select(0);
+            $ionicTabsDelegate.select(1);
         }
 
         $scope.refreshUI = function () {
