@@ -113,6 +113,7 @@ angular
         $scope.$on('$ionicView.enter', function () {
             $ionicSlideBoxDelegate.update();
 			$rootScope.showCart = true;
+			$rootScope.main_title = "GLAMOUR BEAUTY";
         });
 
 		$scope.$on('$ionicView.leave', function () {
@@ -498,10 +499,15 @@ angular
             $scope.items = $scope.items || [];
             $scope.gridItems = $scope.gridItems || [];
 
+			ShopService.GetCategoryProducts($stateParams.id, 1).then(function (data) {
+				$rootScope.main_title = data.heading_title;
+			});
+			
             $scope.tabbedGrid = [];
 			$ionicLoading.show();
             ShopService.GetCategories($stateParams.id).then(function (data) {
 				$ionicLoading.hide();
+			
 				if(data && data.categories && data.categories[0] && data.categories[0].category_id) {
 					$scope.selectedCategory = data.categories[0].category_id;
 				}
@@ -590,6 +596,14 @@ angular
         }
 		
 		$scope.loadItems();
+		
+		$scope.$on('$ionicView.enter', function () {
+			//$rootScope.main_title = "GLAMOUR BEAUTY";
+        });
+
+		$scope.$on('$ionicView.leave', function () {
+            $rootScope.main_title = "GLAMOUR BEAUTY";
+        });
     });
 
 

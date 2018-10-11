@@ -212,7 +212,7 @@ angular
         }
 
 		$scope.strip = function(s){
-				return s.replace(/<(?:.|\n)*?>/gm, '');
+			return s.replace(/<(?:.|\n)*?>/gm, '');
 		}
 		
         // loads user info to UI
