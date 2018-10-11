@@ -211,6 +211,10 @@ angular
             });
         }
 
+		$scope.strip = function(s){
+				return s.replace(/<(?:.|\n)*?>/gm, '');
+		}
+		
         // loads user info to UI
         $scope.loadPersonalInfo = function () {
 
