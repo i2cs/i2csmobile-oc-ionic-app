@@ -198,3 +198,27 @@ background-color: #fff!important;
 .bar.bar-balanced .title {
     color: #404040;
 }
+
+.mi{
+	text-align: right;
+    width: 196px;
+    display: inline-block;
+}
+
+
+ion-header-bar[dir="rtl"].bar-header{
+    direction: ltr!important;
+}
+
+ion-header-bar[dir="rtl"].bar-header>* {
+    direction: ltr!important;
+}
+
+body[dir=rtl] .bar-header .title+.buttons {
+    left: unset;
+    right: 5px;
+}
+
+.ssss>*{
+	 direction: ltr!important;
+}
