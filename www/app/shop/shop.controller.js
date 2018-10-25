@@ -22,8 +22,8 @@ angular
         var initialCall = true;
 
         // sync form input to localstorage
-        $localStorage.home = $localStorage.home || {};
-        $scope.data = $localStorage.home;
+        //$localStorage.home = $localStorage.home || {};
+        $scope.data = {}; //$localStorage.home;
         $scope.latestPage = 1;
 
         if (!$scope.data.slides)

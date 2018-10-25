@@ -8,7 +8,7 @@ angular.module('starter')
     .constant('EMAIL', 'sales@fishwasel.com')
     .constant('PHONE', '+966535108080')
     .constant('ANALYTICS_ID', 'UA-79548648-1')
-	.constant('COUPONS_ENABLED', true)
+	.constant('COUPONS_ENABLED', false)
     .constant('REWARDS_ENABLED', false)
     .constant('STATUSBAR_COLOR', "#053065")
     .constant('LANGUAGES', [

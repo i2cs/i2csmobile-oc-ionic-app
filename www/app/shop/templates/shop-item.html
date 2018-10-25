@@ -4,12 +4,12 @@
     </ion-nav-buttons>
 
     <ion-pane class="pane">
-        <ion-tabs delegate-handle="product-tabs" class="sub-tab-top tabs-color-active-standard tabs-positive tabs-icon-left">
+        <!--ion-tabs delegate-handle="product-tabs" class="sub-tab-top tabs-color-active-standard tabs-positive tabs-icon-left"-->
 
-            <ion-tab href="#/app/menu/shop/item/{{id}}" title="{{ 'shop.item_tabs_details' | i18n}}" icon-off="ion-ios-book-outline" icon-on="ion-ios-book-outline">
+            <!--ion-tab href="#/app/menu/shop/item/{{id}}" title="{{ 'shop.item_tabs_details' | i18n}}" icon-off="ion-ios-book-outline" icon-on="ion-ios-book-outline"-->
                 <ion-nav-view name="">
-                    <ion-content elastic-header="item-elastic-header" delegate-handle="example-scroller" class="has-sub-tabs-top">
-                        <div class="padding text-center">
+                    <ion-content elastic-header="item-elastic-header" delegate-handle="example-scroller">
+                        <div>
                             <ion-slide-box id="item-elastic-header">
                                 <ion-slide ng-repeat="img in ::item.images">
                                     <div class="itemshow"><img preload-image ng-src="{{::img.preview}}" default-image="app/shop/images/placeholder.png" fallback-image="app/shop/images/placeholder.png" /></div>
@@ -17,8 +17,8 @@
                             </ion-slide-box>
 
                             <div class="white-background padding-top">
+							<div class="padding text-center">
                                 <h5><span ng-bind-html="item.name"></span> <span class="badge badge-assertive" ng-if="off" i18n="shop.item_page_off" data-percent="{{item.off}}"></span></h5>
-                                <p>{{item.text_model}} {{item.model}}</p>
                                 <p>{{item.text_stock}} {{item.stock}}</p>
                                 <p ng-if="reward && item.reward" i18n="shop.reward_points" data-reward="{{item.reward}}"></p>
                                 <p>
@@ -29,7 +29,7 @@
                                     <i class="icon ion-iphone mobile-icon-fix"></i> <span i18n="shop.special_price"></span> <span class="mobile-price color-animate">{{::item.mobile_special}}</span>
                                 </p>
                             </div>
-                        </div>
+                        
                         <div class="list white-background">
                             <div class="item item-divider" i18n="shop.item_description"></div>
                             <div ng-class="{'seemore' : showLessDesc}" class="padding" ng-init="showLessDesc = true">
@@ -137,12 +137,13 @@
                                 </ion-slide>
                             </ion-slide-box>
                         </div>
-
+						</div>
+</div>
                     </ion-content>
                 </ion-nav-view>
-            </ion-tab>
+            <!--/ion-tab-->
 
-            <ion-tab href="#/app/menu/shop/item/{{id}}" title="{{ 'shop.item_tabs_photos' | i18n}}" icon-off="ion-ios-camera-outline" icon-on="ion-ios-camera-outline">
+            <!--ion-tab href="#/app/menu/shop/item/{{id}}" title="{{ 'shop.item_tabs_photos' | i18n}}" icon-off="ion-ios-camera-outline" icon-on="ion-ios-camera-outline">
                 <ion-nav-view name="tab-tab2">
                     <ion-content class="has-sub-tabs-top">
                         <div ng-repeat="img in ::item.images" class="itemshow">
@@ -150,17 +151,17 @@
                         </div>
                     </ion-content>
                 </ion-nav-view>
-            </ion-tab>
+            </ion-tab-->
 
-            <ion-tab href="#/app/menu/shop/item/{{id}}" title="{{ 'shop.item_tabs_reviews' | i18n}}" icon-off="ion-ios-compose-outline" icon-on="ion-ios-compose-outline">
+            <!--ion-tab href="#/app/menu/shop/item/{{id}}" title="{{ 'shop.item_tabs_reviews' | i18n}}" icon-off="ion-ios-compose-outline" icon-on="ion-ios-compose-outline">
                 <ion-nav-view name="tab-tab3">
                     <ion-content class="has-sub-tabs-top">
                         <item-rating item="item" ng-if="item.review_status"></item-rating>
                     </ion-content>
                 </ion-nav-view>
-            </ion-tab>
+            </ion-tab-->
 
-            <ion-tab href="#/app/menu/shop/item/{{id}}" title="{{ 'shop.item_tabs_share' | i18n}}" icon-off="ion-ios-upload-outline" icon-on="ion-ios-upload-outline">
+            <!--ion-tab href="#/app/menu/shop/item/{{id}}" title="{{ 'shop.item_tabs_share' | i18n}}" icon-off="ion-ios-upload-outline" icon-on="ion-ios-upload-outline">
                 <ion-nav-view name="tab-tab4">
                     <ion-content class="has-sub-tabs-top">
 
@@ -172,12 +173,12 @@
                         </div>
                     </ion-content>
                 </ion-nav-view>
-            </ion-tab>
-        </ion-tabs>
+            </ion-tab-->
+        <!--/ion-tabs-->
     </ion-pane>
 
 
-    <ion-footer-bar align-title="center" ng-class="{'bar-assertive':shop.shopItemForm.$invalid, 'bar-positive':shop.shopItemForm.$valid}">
+    <ion-footer-bar align-title="center" class="bar-positive">
         <div class="buttons">
             <button class="button" ng-click="addToCart()" i18n="shop.item_button_add_to_cart"></button>
         </div>

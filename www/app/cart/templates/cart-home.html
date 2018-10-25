@@ -39,10 +39,9 @@
             <ion-item class="item item-thumbnail-left cart-item" ng-repeat="item in items">
                 <img class="cart-image" ng-src="{{::item.thumb}}">
                 <h3 class="cart-item-title" ng-bind-html="::item.name"></h3>
-                <h5 class="cart-item-title" i18n="cart.product_code" data-code="{{item.model}}"></h5>
                 <h5 ng-if="rewards_enabled" class="cart-item-title" i18n="cart.Cart_item_reward_points" data-reward="{{item.reward}}"></h5>
                 <ul class="cart-item-options">
-                    <li ng-repeat="opt in item.option">{{::opt.name}}:{{::opt.value}}</li>
+                    <li ng-repeat="opt in item.option">{{::opt.name}}: <div  class="poptionv">{{opt.value | date}}</div></li>
                 </ul>
                 <div ng-init="cart[item.cart_id] = {}; cart[item.cart_id].q = item.quantity" class="row cart-home-button-set">
 						<div class="col col-10" >

@@ -3,8 +3,6 @@
     angular
         .module('paytabsexpress.module')
         .service('PaymentPaytabsexpressService', function ($http, $q, $ionicLoading, dataService, BASE_URL, BASE_API_URL) {
-var cordova = {};
-cordova.InAppBrowser = window;
             this.OpenPaymetWindow = function (id) {
                 var deferred = $q.defer();
 

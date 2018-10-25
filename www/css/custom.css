@@ -136,3 +136,80 @@
   src: local('Luckiest Guy Regular'), local('LuckiestGuy-Regular'), url(http://fonts.gstatic.com/s/luckiestguy/v8/_gP_1RrxsjcxVyin9l9n_j2hTd52.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
+.tabs-icon-left>.tabs .tab-item .tab-title{
+	margin-left: 4px;
+    margin-right: 4px;
+}
+
+.item-select select {
+	max-width: 50%;
+}
+
+.item.item-input.item-select .input-label {
+    max-width: 300px;
+    width: 50%;
+	font-size: 15px;
+}
+
+.item-complex .item-content {
+    padding: 16px 20px 16px 16px;
+}
+
+.item-thumbnail-left .item-content>img:first-child {
+	position: initial;
+}
+
+.cart-item-options {
+    font-size: 13px!important;
+    line-height: 14px!important;
+}
+
+.cart-item {
+    padding-left: 16px;
+}
+
+.button.button-block, .button.button-full {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.poptionv{
+	display: inline-block;
+    direction: ltr;
+}
+
+body[dir=rtl] .product-categories{
+	direction: rtl;
+}
+
+.home-category-grid-icons{
+	border: none;
+}
+
+.home-category-grid-icons>a{
+	border: none;
+}
+
+.home-category-grid-icons>a:first-child {
+    border: none;
+}
+
+.item-thumbnail-left>img{
+	position : initial!important;
+}
+
+.item-divider {
+    border: 0;
+    font-size: 18px;
+    background-color: #084495;
+    color: #ffffff;
+    margin-top: 10px;
+    font-weight: lighter;
+}
+
+.bb{
+	background-color: #063166;
+    vertical-align: middle;
+    padding-top: 21px;
+}

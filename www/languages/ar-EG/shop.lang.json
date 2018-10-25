@@ -1,5 +1,5 @@
 {
-  "featured_title": "منتجات مميزة",
+  "featured_title": "الأفضل مبيعاً",
   "latest_title": "آخر المنتجات",
   "off": "{percent}% OFF",
   "title_shop_search": "بحث",
@@ -48,5 +48,6 @@
   "error_cant_add_to_cart": "خطأ. لا يمكن إضافة إلى العربة",
 
   "search_label": "بحث",
-  "reward_points": "Reward points : {reward}"
+  "reward_points": "Reward points : {reward}",
+  "pull": "السحب ألعلى للتحديث"
 }

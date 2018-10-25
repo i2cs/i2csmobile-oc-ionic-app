@@ -49,7 +49,11 @@ angular.module('starter')
                 $ionicHistory.clearCache();
 
                 // send a request to API
-                return dataService.apiSecuredPost('/language/set', { code: i[0].toLowerCase() });
+				var x = i[0].toLowerCase();
+				if(i[0].toLowerCase() == 'en'){
+					x = "en-gb"
+				}
+                return dataService.apiSecuredPost('/language/set', { code: x });
             }
 
 

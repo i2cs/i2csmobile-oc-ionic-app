@@ -360,8 +360,8 @@ angular
                 data.review_status = data.review_status == "1";
                 data.images.unshift({
 				  "popup": data.popup,
-				  "thumb": data.popup,
-				  "preview": data.popup
+				  "thumb": data.thumb,
+				  "preview": data.thumb
 				});
 
                 return data;
@@ -506,7 +506,7 @@ angular
          */
         this.GetFeaturedProducts = function () {
 
-            return dataService.apiSecuredPost('/featured').then(function (data) {
+            return dataService.apiSecuredPost('/featured', {width : 1774, height : 1136}).then(function (data) {
                 for (var i in data.products) {
                     if (data.products[i].special_clear) {
                         var s = parseInt(data.products[i].special_clear);
@@ -570,7 +570,7 @@ angular
             var start = (page - 1) * 10;
             var limit = 10;
 
-            return dataService.apiSecuredPost('/latest', { start: start, limit: limit }).then(function (data) {
+            return dataService.apiSecuredPost('/latest', { width : 1774, height : 1136, start: start, limit: limit }).then(function (data) {
                 for (var i in data.products) {
                     if (data.products[i].special_clear) {
                         var s = parseInt(data.products[i].special_clear);
