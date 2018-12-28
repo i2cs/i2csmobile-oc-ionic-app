@@ -26,7 +26,7 @@
             <span i18n="shop.featured_title"></span>
         </div>
 		<div class="recent-items-list list">
-            <div class="item" ng-repeat="item in data.featuredItems" >
+            <div class="item item-p" ng-repeat="item in data.featuredItems" style="padding:0;">
                 <item-template item="item" mode="2"></item-template>
             </div>
         </div>
@@ -35,7 +35,7 @@
             <span i18n="shop.latest_title"></span>
         </div>
         <div class="recent-items-list" ng-class="{'row grid_mode' : grid_mode, 'list': !grid_mode}">
-            <div class="item" ng-repeat="item in data.latestItems" ng-class="{'col-50' : grid_mode}">
+            <div class="item item-p" ng-repeat="item in data.latestItems" ng-class="{'col-50' : grid_mode}" style="padding:0;">
                 <item-template item="item" mode="2"></item-template>
             </div>
 

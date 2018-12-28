@@ -26,7 +26,13 @@
                 </label>
 
                 <div class="item item-divider">
-                    <div i18n="cart.order_your_address"></div>
+                    <span i18n="cart.order_your_address"></span>
+                    <geolocation-address style="float:right" line1="checkout.address_1"
+                                         line2="checkout.address_2"
+                                         city="checkout.city"
+                                         postalcode="checkout.postcode"
+                                         country="checkout.country_id"
+                                         state="checkout.zone_id"></geolocation-address>
                 </div>
 
                 <label class="item item-input item-floating-label">
@@ -48,20 +54,20 @@
                         <input type="text" data-i18n-attr="{placeholder: 'cart.order_postal'}" ng-model="checkout.postcode" maxlength="10" minlength="5" name="postal_code" required>
                     </label>
                 </div>
-                <div class="row no-padding item item-double-col">
-                    <label class="item item-input item-select col-50">
+                <!--div class="row no-padding item item-double-col"-->
+                    <label class="item item-input item-select">
                         <div class="input-label" i18n="cart.order_country"></div>
                         <select ng-model="checkout.country_id" ng-change="countryChanged()" name="country_id" required>
                             <option value="{{::country.country_id}}" ng-selected="country.country_id == checkout.country_id" ng-repeat="country in countries">{{::country.name}}</option>
                         </select>
                     </label>
-                    <label class="item item-input item-select col-50">
+                    <label class="item item-input item-select">
                         <div class="input-label" i18n="cart.order_region"></div>
                         <select ng-model="checkout.zone_id" name="zone_id" required ng-init="countryChanged()">
                             <option value="{{::zone.zone_id}}" ng-selected="zone.zone_id == checkout.zone_id" ng-repeat="zone in zones">{{::zone.name}}</option>
                         </select>
                     </label>
-                </div>
+                <!--/div-->
             </form>
         </ion-list>
     </ion-content>

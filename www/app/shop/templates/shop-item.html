@@ -10,14 +10,14 @@
                 <ion-nav-view name="">
                     <ion-content elastic-header="item-elastic-header" delegate-handle="example-scroller">
                         <div>
-                            <ion-slide-box id="item-elastic-header">
+                            <ion-slide-box id="item-elastic-header" style="padding-bottom:0px;">
                                 <ion-slide ng-repeat="img in ::item.images">
                                     <div class="itemshow"><img preload-image ng-src="{{::img.preview}}" default-image="app/shop/images/placeholder.png" fallback-image="app/shop/images/placeholder.png" /></div>
                                 </ion-slide>
                             </ion-slide-box>
 
-                            <div class="white-background padding-top">
-							<div class="padding text-center">
+                            <div class="white-background padding-top" style="padding-top:0px;">
+							<div class="padding text-center" style="padding-top:0px;padding-bottom:0px;">
                                 <h5><span ng-bind-html="item.name"></span> <span class="badge badge-assertive" ng-if="off" i18n="shop.item_page_off" data-percent="{{item.off}}"></span></h5>
                                 <p>{{item.text_stock}} {{item.stock}}</p>
                                 <p ng-if="reward && item.reward" i18n="shop.reward_points" data-reward="{{item.reward}}"></p>

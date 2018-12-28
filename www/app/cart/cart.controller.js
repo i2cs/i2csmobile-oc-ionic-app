@@ -258,7 +258,7 @@ angular
 
                 // if logged in, save address and forget the request
                 if ($localStorage.user) {
-                    CartService.SetAddress($scope.checkout);
+                    //CartService.SetAddress($scope.checkout);
                 }
 
                 CartService.SetShippingAddress($scope.checkout).then(function (data) {
@@ -296,20 +296,21 @@ angular
 
             // save shipping method and load payment methods
             CartService.SaveShippingMethod($rootScope.paymentAndShipping).then(function (data) {
-                $rootScope.paymentAndShipping.payment_method = null;
+                //$rootScope.paymentAndShipping.payment_method = null;
                 $ionicLoading.hide();
-                $scope.loadPaymentMethods();
-                $scope.loadCart(true);
+                //$scope.loadPaymentMethods();
+                //$scope.loadCart(true);
             }, function (data) {
                 //alert("Error while saving shipping method");
                 $ionicLoading.hide();
 				
 				CartService.GetShippingMethods().then(function (data2) {
 					CartService.SaveShippingMethod($rootScope.paymentAndShipping).then(function (data1) {
-						$rootScope.paymentAndShipping.payment_method = null;
+						//$rootScope.paymentAndShipping.payment_method = null;
+						$ionicLoading.hide();
 						$ionicLoading.hide();
 						$scope.loadPaymentMethods();
-						$scope.loadCart(true);
+						//$scope.loadCart(true);
 					}, function (data1) {
 						//alert("Error while saving shipping method");
 						$ionicLoading.hide();

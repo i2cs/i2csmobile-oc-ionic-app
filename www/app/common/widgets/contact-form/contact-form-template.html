@@ -15,7 +15,7 @@
             <button type="submit" id="send_button" class="button button-block button-positive" ng-class="{'button-outline' : contactForm.$invalid}" ng-disabled="contactForm.$invalid" i18n="info.contact_send_button"></button>
         </div>
         <a class="button button-block button-positive" href="mailto:{{email}}">{{email}}</a>
-        <a class="button button-block button-positive" href="tel:{{phone}}">{{phone}}</a>
+        <a class="button button-block button-positive" style="direction:ltr" href="tel:{{phone}}">{{phone}}</a>
     </form>
 </div>
 

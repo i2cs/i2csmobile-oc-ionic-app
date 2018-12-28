@@ -4,7 +4,7 @@
   "title_checkout": "Checkout",
   "title_delivery_payment": "Delivery and Payment",
   "title_invoice": "Invoice",
-  
+
   "enter_coupon_title":  "Have a cupon?",
   "enter_coupon_label": "Enter your coupon here",
   "added_coupon_text":  "Coupon added!",
@@ -20,7 +20,7 @@
   "delivery_method" :  "Delivery Method",
   "payment_method" :  "Payment Method",
   "comments_section" :  "Additional Comment/Instructions",
-  "comments": "Comments/Instructions",
+  "comments": " ",
 
   "invoice_address" :  "Address",
 
@@ -52,6 +52,7 @@
   "order_lastname": "Last Name",
   "order_email": "Email",
   "order_telephone": "Telephone",
+  "order_name": "Name",
   "order_your_address": "Your Address",
   "order_address1": "Address Line 1",
   "order_address2": "Address Line 2",

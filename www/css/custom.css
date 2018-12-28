@@ -199,12 +199,17 @@ body[dir=rtl] .product-categories{
 	position : initial!important;
 }
 
+.item-p{
+	border-color: #fff;
+	border: 0;
+}
+
 .item-divider {
     border: 0;
     font-size: 18px;
     background-color: #084495;
     color: #ffffff;
-    margin-top: 10px;
+    margin-top: 0px;
     font-weight: lighter;
 }
 
@@ -212,4 +217,43 @@ body[dir=rtl] .product-categories{
 	background-color: #063166;
     vertical-align: middle;
     padding-top: 21px;
+}
+
+.related-items-details {
+    padding-top: 24px;
+}
+
+.large-app-icon-red {
+    color: #fff;
+    background: #002e6a;
+    background: -moz-linear-gradient(45deg,#002e6a 0,#002e6a 100%);
+    background: -webkit-linear-gradient(45deg,#002e6a 0,#002e6a 100%);
+    background: linear-gradient(45deg,#002e6a 0,#002e6a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#002e6a', endColorstr='#002e6a', GradientType=1);
+}
+
+.list {
+    padding-top: 0px;
+}
+
+body[dir=rtl] ion-footer-bar{
+	direction: rtl!important;
+}
+
+body[dir=rtl] ion-footer-bar .title{
+	text-align: right!important;
+	right: 5px!important;
+}
+
+body[dir=rtl] ion-footer-bar .title+.buttons{
+	left: 5px;
+	right:unset;
+}
+
+body[dir=rtl] .card .item.item-input input, body[dir=rtl] .list-inset .item.item-input input, body[dir=rtl] .padding-horizontal>.list .item.item-input input, body[dir=rtl] .padding>.list .item.item-input input, body[dir=rtl] .item-input textarea{
+	padding-right: 10px;
+}
+
+body[dir=rtl] geolocation-address{
+	float: left;
 }
