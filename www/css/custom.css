@@ -257,3 +257,5 @@ body[dir=rtl] .card .item.item-input input, body[dir=rtl] .list-inset .item.item
 body[dir=rtl] geolocation-address{
 	float: left;
 }
+
+.bar{overflow-x: hidden !important;} 

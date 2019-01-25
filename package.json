@@ -43,7 +43,11 @@
     "cordova-plugin-geolocation@2.4.2"
   ],
   "cordovaPlatforms": [
-    "android",
-    "ios"
+    "ios",
+    {
+      "platform": "android",
+      "version": "5.1.1",
+      "locator": "android@5.1.1"
+    }
   ]
 }
